@@ -12,8 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import main.java.frc.robot.commands.ExampleCommand;
-import main.java.frc.robot.subsystems.ExampleSubsystem;
+import main.java.frc.robot.subsystems.DriveBase;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,8 +24,7 @@ import main.java.frc.robot.subsystems.ExampleSubsystem;
 // If you rename or move this class, update the build.properties file in the project root
 public class Robot extends TimedRobot 
 {
-
-    public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+    public static final DriveBase drive = new DriveBase();
     public static OI oi;
 
     private Command autonomousCommand;
@@ -40,7 +38,6 @@ public class Robot extends TimedRobot
     public void robotInit() 
     {
         oi = new OI();
-        chooser.addDefault("Default Auto", new ExampleCommand());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
     }
