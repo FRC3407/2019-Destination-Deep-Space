@@ -1,8 +1,9 @@
 /.gradle
+/.idea/workspacr.xml
 /.idea
 /build
 /gradle
 gradlew
 gradlew.bat
-build.xml
+build.xmlg
 2019-Destination-Deep-Space.iml
