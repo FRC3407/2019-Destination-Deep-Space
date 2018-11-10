@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import main.java.frc.robot.subsystems.DriveBase;
+import main.java.frc.robot.subsystems.GyroSub;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,6 +27,8 @@ public class Robot extends TimedRobot
 {
     public static final DriveBase drive = new DriveBase();
     public static OI oi;
+
+    public static GyroSub gyro = new GyroSub();
 
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
@@ -73,7 +76,11 @@ public class Robot extends TimedRobot
     @Override
     public void autonomousInit() 
     {
+        gyro.gyroCalibrate();
+
         autonomousCommand = chooser.getSelected();
+
+
 
         /*
          * String autoSelected = SmartDashboard.getString("Auto Selector",

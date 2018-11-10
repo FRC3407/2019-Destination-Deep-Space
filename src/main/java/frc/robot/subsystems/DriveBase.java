@@ -26,6 +26,10 @@ public class DriveBase extends Subsystem {
         drive.tankDrive(leftPower,rightPower);
     }
 
+    public void arcade(double power, double angle){
+        drive.arcadeDrive(power, angle);
+    }
+
     public void stop(){
         drive.tankDrive(0,0);
     }
