@@ -6,17 +6,27 @@ import main.java.frc.robot.Robot;
 
 
 public class TimedDrive extends TimedCommand{
-    private double right, left;
-
+    private double right, left, initAngle;
+    private  double currentAngle = 0;
+    private double kP = 0.03;
     public TimedDrive(double timeout, double right, double left) {
         super(timeout);
+        initAngle = squishAngle(Robot.gyro.getAngle());
         this.right = right;
         this.left = left;
         requires(Robot.drive);
     }
 
 
+    protected double squishAngle(double angle){
+        if(angle>180){
+            angle = ((angle-180)*-1);
+        }
+        angle/=180;
+        return angle;
+    }
     /**
+     *
      * The initialize method is called just before the first time
      * this Command is run after being started.
      */
@@ -32,7 +42,16 @@ public class TimedDrive extends TimedCommand{
      */
     @Override
     protected void execute() {
-        Robot.drive.tank(left,right);
+        //init = -.5
+        //current -.47
+
+        if(left == right){
+            currentAngle = squishAngle(Robot.gyro.getAngle());
+
+            Robot.drive.arcade(left, (initAngle-currentAngle)*kP);
+        }else {
+            Robot.drive.tank(left , right);
+        }
     }
 
 

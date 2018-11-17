@@ -29,7 +29,7 @@ public class DriveCommand extends Command {
      */
     @Override
     protected void execute() {
-        Robot.drive.tank(Robot.oi.lStick.getY(), Robot.oi.rStick.getY());
+        Robot.drive.arcade(Robot.oi.rStick.getY(), Robot.oi.rStick.getX());
     }
 
 

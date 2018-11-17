@@ -5,7 +5,7 @@ import main.java.frc.robot.Robot;
 
 
 public class GyroDrive extends Command {
-
+    //TODO: impliment
     private double power, angle;
 
     public GyroDrive(double power, double angle) {
@@ -35,6 +35,7 @@ public class GyroDrive extends Command {
     protected void execute() {
 
         while(angle - Robot.gyro.getAngle() > .5){
+
 
         }
 
