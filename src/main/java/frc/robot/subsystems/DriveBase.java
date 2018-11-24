@@ -1,7 +1,6 @@
 package main.java.frc.robot.subsystems;
 
 
-import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -34,7 +33,6 @@ public class DriveBase extends Subsystem {
         drive.tankDrive(0,0);
     }
     public void initDefaultCommand() {
-        // TODO: Set the default command, if any, for a subsystem here. Example:
         setDefaultCommand(new DriveCommand());
     }
 }

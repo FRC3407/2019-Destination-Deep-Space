@@ -3,7 +3,6 @@ package main.java.frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.interfaces.Gyro;
 
 public class GyroSub extends Subsystem {
 
@@ -20,6 +19,14 @@ public class GyroSub extends Subsystem {
 
     public double getAngle(){
         return geoff.getAngle();
+    }
+
+    public static double squishAngle(double angle){
+        if(angle>180){
+            angle = ((angle-180)*-1);
+        }
+        angle/=180;
+        return angle;
     }
 
 

@@ -1,9 +1,7 @@
 package main.java.frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import main.java.frc.robot.OI;
 import main.java.frc.robot.Robot;
-import main.java.frc.robot.subsystems.DriveBase;
 
 
 public class DriveCommand extends Command {
@@ -52,7 +50,7 @@ public class DriveCommand extends Command {
      */
     @Override
     protected boolean isFinished() {
-        // TODO: Make this return true when this Command no longer needs to run execute()
+
         return false;
     }
 

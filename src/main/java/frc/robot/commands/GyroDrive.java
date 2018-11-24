@@ -5,8 +5,10 @@ import main.java.frc.robot.Robot;
 
 
 public class GyroDrive extends Command {
-    //TODO: impliment
     private double power, angle;
+    private double threshold = 3;
+    private double kP = .03; //random value. requires tuning.
+    //TODO: Tune kP & make a shuffleboard (or whatever) value for tuning
 
     public GyroDrive(double power, double angle) {
         // Use requires() here to declare subsystem dependencies
@@ -33,10 +35,15 @@ public class GyroDrive extends Command {
      */
     @Override
     protected void execute() {
-
-        while(angle - Robot.gyro.getAngle() > .5){
-
-
+        double error = angle - Robot.gyro.getAngle();
+        if(error > threshold){
+            Robot.drive.arcade(power,error*kP);
+        } else {
+            Robot.drive.arcade(0,0);
+            //make this not timed, and just return true when error<threshold?
+            //that way it would just finish when it's done rather than having to sit there.
+            //that would work a lot better with momentum and such.
+            //TODO: write non timed version
         }
 
     }
@@ -61,7 +68,6 @@ public class GyroDrive extends Command {
      */
     @Override
     protected boolean isFinished() {
-        // TODO: Make this return true when this Command no longer needs to run execute()
         return false;
     }
 

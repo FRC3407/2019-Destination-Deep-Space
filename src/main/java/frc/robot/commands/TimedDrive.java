@@ -3,28 +3,21 @@ package main.java.frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.TimedCommand;
 import main.java.frc.robot.Robot;
+import main.java.frc.robot.subsystems.GyroSub;
 
 
 public class TimedDrive extends TimedCommand{
     private double right, left, initAngle;
     private  double currentAngle = 0;
-    private double kP = 0.03;
+    private double kP = 0.03; //arbitrary value, would need to be tested.
     public TimedDrive(double timeout, double right, double left) {
         super(timeout);
-        initAngle = squishAngle(Robot.gyro.getAngle());
+        initAngle = GyroSub.squishAngle(Robot.gyro.getAngle());
         this.right = right;
         this.left = left;
         requires(Robot.drive);
     }
 
-
-    protected double squishAngle(double angle){
-        if(angle>180){
-            angle = ((angle-180)*-1);
-        }
-        angle/=180;
-        return angle;
-    }
     /**
      *
      * The initialize method is called just before the first time
@@ -42,13 +35,14 @@ public class TimedDrive extends TimedCommand{
      */
     @Override
     protected void execute() {
-        //init = -.5
-        //current -.47
+        //init = .5
+        //current .3
 
         if(left == right){
-            currentAngle = squishAngle(Robot.gyro.getAngle());
+            currentAngle = GyroSub.squishAngle(Robot.gyro.getAngle());
 
-            Robot.drive.arcade(left, (initAngle-currentAngle)*kP);
+            Robot.drive.arcade(left, (initAngle-currentAngle)*kP); //seems to be correct. similar to other solutons online.
+
         }else {
             Robot.drive.tank(left , right);
         }
