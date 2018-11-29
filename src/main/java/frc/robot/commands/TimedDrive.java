@@ -10,6 +10,7 @@ public class TimedDrive extends TimedCommand{
     private double right, left, initAngle;
     private  double currentAngle = 0;
     private double kP = 0.03; //arbitrary value, would need to be tested.
+    //TODO: PID tune that
     public TimedDrive(double timeout, double right, double left) {
         super(timeout);
         initAngle = GyroSub.squishAngle(Robot.gyro.getAngle());

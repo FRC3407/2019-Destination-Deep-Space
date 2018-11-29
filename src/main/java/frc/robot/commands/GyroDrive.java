@@ -44,6 +44,7 @@ public class GyroDrive extends Command {
             //that way it would just finish when it's done rather than having to sit there.
             //that would work a lot better with momentum and such.
             //TODO: write non timed version
+            finish();
         }
 
     }
@@ -66,6 +67,9 @@ public class GyroDrive extends Command {
      * @return whether this command is finished.
      * @see Command#isTimedOut() isTimedOut()
      */
+    protected boolean finish(){
+        return true;
+    }
     @Override
     protected boolean isFinished() {
         return false;

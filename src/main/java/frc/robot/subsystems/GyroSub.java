@@ -3,6 +3,7 @@ package main.java.frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import main.java.frc.robot.RobotMap;
 
 public class GyroSub extends Subsystem {
 
@@ -10,7 +11,7 @@ public class GyroSub extends Subsystem {
     // here. Call these from Commands.
 
     // Initialize new object gyro
-    private AnalogGyro geoff = new AnalogGyro(1);
+    private AnalogGyro geoff = new AnalogGyro(RobotMap.gyroPort);
 
     public void gyroCalibrate(){
         geoff.initGyro();
