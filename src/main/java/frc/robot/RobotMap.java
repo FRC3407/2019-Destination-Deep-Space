@@ -24,7 +24,7 @@ public class RobotMap
 
      public static int stickL = 0;
      public static int stickR = 1;
-     public static int gyroPort = 1;
+     public static int gyroPort = 0;
 
  // If you are using multiple modules, make sure to define both the port
     // number and the module. For example you with a rangefinder:
