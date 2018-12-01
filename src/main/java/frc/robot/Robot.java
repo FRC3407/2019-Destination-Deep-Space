@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import main.java.frc.robot.commands.DefaultAuto;
 import main.java.frc.robot.subsystems.DriveBase;
 import main.java.frc.robot.subsystems.GyroSub;
 
@@ -77,7 +78,9 @@ public class Robot extends TimedRobot
     public void autonomousInit()
     {
         gyro.gyroCalibrate();
-        autonomousCommand = chooser.getSelected();
+        //todo: add command to sendable chooser
+        //autonomousCommand = chooser.getSelected();
+        autonomousCommand = (new DefaultAuto());
 
 
 

@@ -41,6 +41,7 @@ public class TimedDrive extends TimedCommand{
 
         if(left == right){
             currentAngle = GyroSub.squishAngle(Robot.gyro.getAngle());
+            System.out.println(currentAngle);
 
             Robot.drive.arcade(left, (initAngle-currentAngle)*kP); //seems to be correct. similar to other solutons online.
 
