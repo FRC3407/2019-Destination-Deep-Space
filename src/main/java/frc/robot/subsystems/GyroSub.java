@@ -1,9 +1,11 @@
 package main.java.frc.robot.subsystems;
 
 
+import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import main.java.frc.robot.RobotMap;
+import edu.wpi.first.wpilibj.SerialPort;
 
 public class GyroSub extends Subsystem {
 
@@ -11,15 +13,16 @@ public class GyroSub extends Subsystem {
     // here. Call these from Commands.
 
     // Initialize new object gyro
-    private AnalogGyro geoff = new AnalogGyro(RobotMap.gyroPort);
+    //private AnalogGyro geoff = new AnalogGyro(RobotMap.gyroPort);
+    private AHRS ahrs = new AHRS(SerialPort.Port.kMXP);
 
     public void gyroCalibrate(){
-        geoff.initGyro();
-        geoff.calibrate();
+        //geoff.initGyro();
+        //geoff.calibrate();
     }
 
     public double getAngle(){
-        return geoff.getAngle();
+        return ahrs.getAngle();
     }
 
     public static double squishAngle(double angle){
