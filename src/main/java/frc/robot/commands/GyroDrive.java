@@ -5,15 +5,17 @@ import main.java.frc.robot.Robot;
 
 
 public class GyroDrive extends Command {
-    private double power, angle;
+    private double power, angle, initAngle;
     private double threshold = 3;
     private double kP = .03; //random value. requires tuning.
+    private boolean isFinished = false;
     //TODO: Tune kP & make a shuffleboard (or whatever) value for tuning
 
     public GyroDrive(double power, double angle) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         requires(Robot.gyro);
+        this.initAngle = Robot.gyro.getAngle();
         this.power = power;
         this.angle = angle;
     }
@@ -40,11 +42,7 @@ public class GyroDrive extends Command {
             Robot.drive.arcade(power,error*kP);
         } else {
             Robot.drive.arcade(0,0);
-            //make this not timed, and just return true when error<threshold?
-            //that way it would just finish when it's done rather than having to sit there.
-            //that would work a lot better with momentum and such.
-            //TODO: write non timed version
-            finish();
+            isFinished = true;
         }
 
     }
@@ -67,12 +65,9 @@ public class GyroDrive extends Command {
      * @return whether this command is finished.
      * @see Command#isTimedOut() isTimedOut()
      */
-    protected boolean finish(){
-        return true;
-    }
     @Override
     protected boolean isFinished() {
-        return false;
+        return isFinished;
     }
 
 
@@ -84,7 +79,7 @@ public class GyroDrive extends Command {
      */
     @Override
     protected void end() {
-
+        Robot.drive.arcade(0,0);
     }
 
 
@@ -104,6 +99,7 @@ public class GyroDrive extends Command {
      */
     @Override
     protected void interrupted() {
+        Robot.drive.arcade(0,0);
         super.interrupted();
     }
 }

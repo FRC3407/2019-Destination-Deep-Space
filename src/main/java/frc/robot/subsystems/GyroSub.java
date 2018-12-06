@@ -24,6 +24,9 @@ public class GyroSub extends Subsystem {
     public double getAngle(){
         return ahrs.getAngle();
     }
+    public boolean isCalibrate(){
+        return ahrs.isCalibrating();
+    }
 
     public static double squishAngle(double angle){
         if(angle>180){
