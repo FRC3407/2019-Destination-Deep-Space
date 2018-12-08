@@ -27,7 +27,7 @@ public class DriveCommand extends Command {
      */
     @Override
     protected void execute() {
-        Robot.drive.arcade(Robot.oi.rStick.getY(), Robot.oi.rStick.getX());
+        Robot.drive.arcade(-Robot.oi.rStick.getY(), Robot.oi.rStick.getX());
     }
 
 

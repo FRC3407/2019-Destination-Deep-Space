@@ -9,7 +9,7 @@ public class GyroDrive extends Command {
     private double threshold = 3;
     private double kP = .03; //random value. requires tuning.
     private boolean isFinished = false;
-    //TODO: Tune kP & make a shuffleboard (or whatever) value for tuning
+    //TODO: Tune kP & make a3 shuffleboard (or whatever) value for tuning
 
     public GyroDrive(double power, double angle) {
         // Use requires() here to declare subsystem dependencies
@@ -17,7 +17,7 @@ public class GyroDrive extends Command {
         requires(Robot.gyro);
         this.initAngle = Robot.gyro.getAngle();
         this.power = power;
-        this.angle = angle;
+        this.angle = initAngle + angle;
     }
 
 
@@ -38,8 +38,9 @@ public class GyroDrive extends Command {
     @Override
     protected void execute() {
         double error = angle - Robot.gyro.getAngle();
-        if(error > threshold){
-            Robot.drive.arcade(power,error*kP);
+        System.out.println(String.format("e=%s target=%s, current=%s", error, angle, Robot.gyro.getAngle()));
+        if(Math.abs(error) > threshold){
+            Robot.drive.arcade(power,((error > 0) ? 1 : -1) *getTurn(Math.abs(error)));
         } else {
             Robot.drive.arcade(0,0);
             isFinished = true;
@@ -47,6 +48,15 @@ public class GyroDrive extends Command {
 
     }
 
+    private double getTurn(double error) {
+        if (error > 25) {
+            return 0.4;
+        } else if (error > 10) {
+            return 0.3;
+        } else {
+            return 0.2;
+        }
+    }
 
     /**
      * <p>

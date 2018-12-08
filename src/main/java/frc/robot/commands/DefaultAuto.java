@@ -11,7 +11,7 @@ public class DefaultAuto extends CommandGroup {
         //      addSequential(new Command2());
         // these will run in order.
         addSequential(new TimedDrive(3, 0.4, 0.4));
-        addSequential(new GyroDrive(.2,90));
+        addSequential(new GyroDrive(.2,180));
 
         // To run multiple commands at the same time,
         // use addParallel()
