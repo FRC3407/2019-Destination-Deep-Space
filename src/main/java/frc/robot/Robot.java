@@ -10,6 +10,7 @@ package main.java.frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import main.java.frc.robot.commands.DefaultAuto;
@@ -34,6 +35,9 @@ public class Robot extends TimedRobot
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
 
+    private long logCounter = 0;
+    private static final long LOG_INTERVAL = 10;
+
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -44,6 +48,11 @@ public class Robot extends TimedRobot
         oi = new OI();
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
+    }
+
+    @Override
+    public void robotPeriodic()
+    {
     }
 
     /**
@@ -127,7 +136,7 @@ public class Robot extends TimedRobot
     public void teleopPeriodic()
     {
         Scheduler.getInstance().run();
-
+        logGyroStats();
     }
 
     public void testInit(){
@@ -139,7 +148,14 @@ public class Robot extends TimedRobot
     @Override
     public void testPeriodic()
     {
-        System.out.println(Robot.gyro.isCalibrate());
-     System.out.println(Robot.gyro.getAngle());
+        logGyroStats();
+    }
+
+    private void logGyroStats() {
+        logCounter++;
+        String gyroMessage = Robot.gyro.getStatusMessage();
+        if ((logCounter % LOG_INTERVAL) == 0) {
+            System.out.println(gyroMessage);
+        }
     }
 }

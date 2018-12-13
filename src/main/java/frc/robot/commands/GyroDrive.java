@@ -3,7 +3,6 @@ package main.java.frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import main.java.frc.robot.Robot;
 
-
 public class GyroDrive extends Command {
     private double power, angle, initAngle;
     private double threshold = 3;
@@ -15,6 +14,7 @@ public class GyroDrive extends Command {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         requires(Robot.gyro);
+        requires(Robot.drive);
         this.initAngle = Robot.gyro.getAngle();
         this.power = power;
         this.angle = initAngle + angle;
@@ -40,7 +40,7 @@ public class GyroDrive extends Command {
         double error = angle - Robot.gyro.getAngle();
         System.out.println(String.format("e=%s target=%s, current=%s", error, angle, Robot.gyro.getAngle()));
         if(Math.abs(error) > threshold){
-            Robot.drive.arcade(power,((error > 0) ? 1 : -1) *getTurn(Math.abs(error)));
+            Robot.drive.arcade(power, getTurn(error));
         } else {
             Robot.drive.arcade(0,0);
             isFinished = true;
@@ -49,6 +49,10 @@ public class GyroDrive extends Command {
     }
 
     private double getTurn(double error) {
+        return ((error > 0) ? 1 : -1) * getAbsoluteTurn(error);
+    }
+    private double getAbsoluteTurn(double error) {
+        error = Math.abs(error);
         if (error > 25) {
             return 0.4;
         } else if (error > 10) {
