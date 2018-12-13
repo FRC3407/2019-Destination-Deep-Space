@@ -1,9 +1,9 @@
 /out
+/dist
 /.gradle
 /.idea
 /build
 /gradle
 gradlew
 gradlew.bat
-build.xmlg
 2019-Destination-Deep-Space.iml
