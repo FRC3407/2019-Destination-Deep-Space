@@ -16,6 +16,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import main.java.frc.robot.commands.DefaultAuto;
 import main.java.frc.robot.subsystems.DriveBase;
 import main.java.frc.robot.subsystems.GyroSub;
+import edu.wpi.cscore.VideoCamera;
+import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj.CameraServer;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -48,6 +51,16 @@ public class Robot extends TimedRobot
         oi = new OI();
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
+
+        VideoCamera camera = CameraServer.getInstance().startAutomaticCapture("fixed", RobotMap.FIXED_CAM);
+        VideoCamera camera2 = CameraServer.getInstance().startAutomaticCapture("servo", RobotMap.SERVO_CAM);
+        //HD Resolution
+        //camera.setResolution(1280, 720);
+        //SD Resolution
+        camera.setResolution(360, 240);
+        camera2.setResolution(480, 360);
+        camera.setFPS(10);
+        camera2.setFPS(15);
     }
 
     @Override
