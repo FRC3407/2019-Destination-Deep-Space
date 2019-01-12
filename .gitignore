@@ -1,3 +1,4 @@
+*.class
 /out
 /dist
 /.gradle
@@ -7,3 +8,7 @@
 gradlew
 gradlew.bat
 2019-Destination-Deep-Space.iml
+build.xml
+build.properties
+build.gralde
+*.jar
