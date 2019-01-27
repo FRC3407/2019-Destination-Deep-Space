@@ -1,51 +1,41 @@
-/*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017 FIRST. All Rights Reserved.                             */
-/* Open Source Software - may be modified and shared by FRC teams. The code   */
-/* must be accompanied by the FIRST BSD license file in the root directory of */
-/* the project.                                                               */
-/*----------------------------------------------------------------------------*/
-
 package frc.team3407.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team3407.Robot;
+import frc.team3407.subsystems.DriveBase;
 
-/**
- * An example command.  You can replace me with your own command.
- */
-public class ExampleCommand extends Command 
-{
-    public ExampleCommand() 
-    {
+
+public class DriveCommand extends Command {
+    public DriveCommand() {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.exampleSubsystem);
+        // eg. requires(chassis);
+        requires(Robot.driveBase);
     }
 
+
     /**
-     * The initialize method is called just before the first time 
+     * The initialize method is called just before the first time
      * this Command is run after being started.
      */
     @Override
-    protected void initialize()
-    {
-        
+    protected void initialize() {
+
     }
 
 
     /**
-     * The execute method is called repeatedly when this Command is 
+     * The execute method is called repeatedly when this Command is
      * scheduled to run until this Command either finishes or is canceled.
      */
     @Override
-    protected void execute()
-    {
-        
+    protected void execute() {
+        Robot.driveBase.tank(Robot.oi.stickL.getY(), Robot.oi.stickR.getY());
     }
 
 
     /**
      * <p>
-     * Returns whether this command is finished. If it is, then the command will be removed and 
+     * Returns whether this command is finished. If it is, then the command will be removed and
      * {@link #end()} will be called.
      * </p><p>
      * It may be useful for a team to reference the {@link #isTimedOut()}
@@ -53,35 +43,32 @@ public class ExampleCommand extends Command
      * </p><p>
      * Returning false will result in the command never ending automatically. It may still be
      * cancelled manually or interrupted by another command. Returning true will result in the
-     * command executing once and finishing immediately. It is recommended to use 
+     * command executing once and finishing immediately. It is recommended to use
      * {@link edu.wpi.first.wpilibj.command.InstantCommand} (added in 2017) for this.
      * </p>
      *
      * @return whether this command is finished.
-     *
      * @see Command#isTimedOut() isTimedOut()
      */
     @Override
-    protected boolean isFinished()
-    {
+    protected boolean isFinished() {
         // TODO: Make this return true when this Command no longer needs to run execute()
         return false;
     }
 
 
     /**
-     * Called once when the command ended peacefully; that is it is called once 
-     * after {@link #isFinished()} returns true. This is where you may want to 
-     * wrap up loose ends, like shutting off a motor that was being used in the 
+     * Called once when the command ended peacefully; that is it is called once
+     * after {@link #isFinished()} returns true. This is where you may want to
+     * wrap up loose ends, like shutting off a motor that was being used in the
      * command.
      */
     @Override
-    protected void end()
-    {
-            
+    protected void end() {
+        Robot.driveBase.stop();
     }
 
-    
+
     /**
      * <p>
      * Called when the command ends because somebody called {@link #cancel()} or
@@ -97,8 +84,8 @@ public class ExampleCommand extends Command
      * </p>
      */
     @Override
-    protected void interrupted()
-    {
+    protected void interrupted() {
         super.interrupted();
+        Robot.driveBase.stop();
     }
 }
