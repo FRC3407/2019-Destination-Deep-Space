@@ -64,7 +64,7 @@ public class Robot extends TimedRobot
 
     /**
      * This autonomous (along with the chooser code above) shows how to select
-     * between different autonomous modes using the dashboard. The sendable
+     * between different auton @Value was introduced as experimental feature in lombok v0.11.4. omous modes using the dashboard. The sendable
      * chooser code works with the Java SmartDashboard. If you prefer the
      * LabVIEW Dashboard, remove all of the chooser code and uncomment the
      * getString code to get the auto name from the text box below the Gyro

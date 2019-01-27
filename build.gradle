@@ -55,3 +55,10 @@ jar {
 wrapper {
     gradleVersion = '5.0'
 }
+sourceSets {
+    main {
+        java {
+            srcDirs = ["src"]
+        }
+    }
+}
