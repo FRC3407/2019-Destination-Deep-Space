@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/2019-Destination-Deep-Space.iml" filepath="$PROJECT_DIR$/.idea/2019-Destination-Deep-Space.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2019-Destination-Deep-Space.main.iml" filepath="$PROJECT_DIR$/.idea/modules/2019-Destination-Deep-Space.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2019-Destination-Deep-Space.test.iml" filepath="$PROJECT_DIR$/.idea/modules/2019-Destination-Deep-Space.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2019-Destination-Deep-Space_main.iml" filepath="$PROJECT_DIR$/.idea/modules/2019-Destination-Deep-Space_main.iml" group="2019-Destination-Deep-Space" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2019-Destination-Deep-Space_test.iml" filepath="$PROJECT_DIR$/.idea/modules/2019-Destination-Deep-Space_test.iml" group="2019-Destination-Deep-Space" />
     </modules>
   </component>
 </project>
