@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import frc.team3407.RobotMap;
+import frc.team3407.commands.DriveCommand;
 
 public class DriveBase extends Subsystem {
 
@@ -24,8 +25,7 @@ public class DriveBase extends Subsystem {
     private DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
     public void initDefaultCommand() {
-        // TODO: Set the default command, if any, for a subsystem here. Example:
-        //    setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new DriveCommand());
     }
 
     public void tank(double leftSpeed, double rightSpeed){

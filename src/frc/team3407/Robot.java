@@ -129,6 +129,7 @@ public class Robot extends TimedRobot
     @Override
     public void testPeriodic() 
     {
-        
+        System.out.println("Test");
+       driveBase.tank(0.4, 0.4);
     }
 }
