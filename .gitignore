@@ -12,3 +12,4 @@ build.xml
 build.properties
 *.jar
 /.idea/workspace.xml
+/target/.history

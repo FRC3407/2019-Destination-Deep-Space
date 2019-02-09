@@ -7,12 +7,17 @@
 
 package frc.team3407;
 
+import edu.wpi.cscore.VideoCamera;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.team3407.commands.TimedDrive;
 import frc.team3407.subsystems.DriveBase;
+import javafx.scene.Camera;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -37,14 +42,16 @@ public class Robot extends TimedRobot
      * used for any initialization code.
      */
     @Override
-    public void robotInit() 
-    {
+    public void robotInit() {
         oi = new OI();
         // chooser.addDefault("Default Auto", new ExampleCommand());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
+        CameraServer.getInstance().startAutomaticCapture("test0", 0);
+        CameraServer.getInstance().startAutomaticCapture("test1", 1);
+        //testCam.setResolution(1280, 720);
+        //testCam.setFPS(28);
     }
-
     /**
      * This function is called once each time the robot enters Disabled mode.
      * You can use it to reset any subsystem information you want to clear when
@@ -57,8 +64,7 @@ public class Robot extends TimedRobot
     }
 
     @Override
-    public void disabledPeriodic() 
-    {
+    public void disabledPeriodic(){
         Scheduler.getInstance().run();
     }
 
@@ -76,7 +82,7 @@ public class Robot extends TimedRobot
     @Override
     public void autonomousInit() 
     {
-        autonomousCommand = chooser.getSelected();
+        //autonomousCommand = chooser.getSelected();
 
         /*
          * String autoSelected = SmartDashboard.getString("Auto Selector",
@@ -84,6 +90,16 @@ public class Robot extends TimedRobot
          * = new MyAutoCommand(); break; case "Default Auto": default:
          * autonomousCommand = new ExampleCommand(); break; }
          */
+
+        //replace the following
+        TimedDrive test1 = new TimedDrive(1, .5, 0);
+        TimedDrive test2 = new TimedDrive(1, 0, .5);
+        TimedDrive test3 = new TimedDrive(2, .5, .5);
+        CommandGroup testSeq = new CommandGroup();
+        testSeq.addSequential(test1);
+        testSeq.addSequential(test2);
+        testSeq.addSequential(test3);
+        autonomousCommand = testSeq;
 
         // schedule the autonomous command (example)
         if (autonomousCommand != null) 
@@ -130,6 +146,6 @@ public class Robot extends TimedRobot
     public void testPeriodic() 
     {
         System.out.println("Test");
-       driveBase.tank(0.4, 0.4);
+        driveBase.tank(0.4, 0.4);
     }
 }

@@ -4,8 +4,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.team3407.Robot;
 import frc.team3407.subsystems.DriveBase;
 
-
 public class DriveCommand extends Command {
+
+    private static double multConstant = .5;
+
     public DriveCommand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -29,7 +31,7 @@ public class DriveCommand extends Command {
      */
     @Override
     protected void execute() {
-        Robot.driveBase.tank(-Robot.oi.stickL.getY(), -Robot.oi.stickR.getY());
+        Robot.driveBase.tank(-Robot.oi.stickL.getY()*multConstant, -Robot.oi.stickR.getY()*multConstant);
     }
 
 
