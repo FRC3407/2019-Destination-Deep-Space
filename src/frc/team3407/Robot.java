@@ -7,8 +7,7 @@
 
 package frc.team3407;
 
-import edu.wpi.cscore.VideoCamera;
-import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
@@ -17,7 +16,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3407.commands.TimedDrive;
 import frc.team3407.subsystems.DriveBase;
-import javafx.scene.Camera;
+import frc.team3407.subsystems.HatchGrab;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -33,6 +32,8 @@ public class Robot extends TimedRobot
     public static OI oi;
 
     public static DriveBase driveBase = new DriveBase();
+
+    public static HatchGrab hatchGrab = new HatchGrab();
 
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();

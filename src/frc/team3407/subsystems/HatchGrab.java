@@ -6,14 +6,27 @@ import frc.team3407.RobotMap;
 
 public class HatchGrab extends Subsystem {
 
-    private static double talonConstant;
+    private static double speed = .3;
+
+    //used in HatchOpen and HatchClose
+    //TODO determine counter threshold (5 is just a filler value)
+    public final static int threshold = 5;
+
     Talon talon = new Talon(RobotMap.talon);
 
     public void initDefaultCommand(){}
 
-    //unusable garbage code, fix later
-    public void grab(){
-        talon.set(talonConstant);
+    public void stop(){
+        //"Motor can be moved again by calling set without having to re-enable the motor."
+        talon.stopMotor();
+    };
+
+    public void open(){
+        talon.set(speed);
+    }
+
+    public void close(){
+        talon.set(-speed);
     }
 
 }

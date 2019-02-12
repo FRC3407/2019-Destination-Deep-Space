@@ -8,6 +8,7 @@
 package frc.team3407;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -44,4 +45,6 @@ public class OI
     // button.whenReleased(new ExampleCommand());
     public Joystick stickL = new Joystick(RobotMap.stickL);
     public Joystick stickR = new Joystick(RobotMap.stickR);
+
+    public JoystickButton hatchButton = new JoystickButton(stickR, RobotMap.hatchButton);
 }

@@ -25,7 +25,7 @@ public class RobotMap
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
 
-    //drivebase
+    //drive base
     public static int leftFront = 3;
     public static int leftBack = 1;
     public static int rightFront = 2;
@@ -35,6 +35,8 @@ public class RobotMap
     public static int stickL = 0;
     public static int stickR = 1;
 
+    //TODO add port number of joystick button
+    public static int hatchButton;
     //hatch grabber
     public static int talon = 5;
 }
