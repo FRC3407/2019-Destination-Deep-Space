@@ -2,17 +2,13 @@ package frc.team3407.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team3407.Robot;
-import frc.team3407.subsystems.HatchGrab;
 
 
-public class HatchClose extends Command {
-
-    private int counter = 0;
-
-    public HatchClose() {
+public class HatchPistonCommand extends Command {
+    public HatchPistonCommand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(Robot.hatchGrab);
+        requires(Robot.hatchPiston);
     }
 
 
@@ -32,9 +28,6 @@ public class HatchClose extends Command {
      */
     @Override
     protected void execute() {
-
-        Robot.hatchGrab.close();
-        counter++;
 
     }
 
@@ -58,8 +51,8 @@ public class HatchClose extends Command {
      */
     @Override
     protected boolean isFinished() {
-        // Make this return true when this Command no longer needs to run execute()
-        return counter >= HatchGrab.threshold;
+        // TODO: Make this return true when this Command no longer needs to run execute()
+        return false;
     }
 
 
@@ -71,7 +64,7 @@ public class HatchClose extends Command {
      */
     @Override
     protected void end() {
-        Robot.hatchGrab.stop();
+
     }
 
 

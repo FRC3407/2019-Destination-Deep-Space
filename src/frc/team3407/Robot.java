@@ -15,11 +15,10 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.command.WaitCommand;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.team3407.commands.HatchClose;
-import frc.team3407.commands.HatchOpen;
-import frc.team3407.commands.TimedDrive;
+import frc.team3407.commands.HatchGrabCommand;
 import frc.team3407.subsystems.DriveBase;
 import frc.team3407.subsystems.HatchGrab;
+import frc.team3407.subsystems.Pneumatics;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -37,6 +36,8 @@ public class Robot extends TimedRobot
     public static DriveBase driveBase = new DriveBase();
 
     public static HatchGrab hatchGrab = new HatchGrab();
+
+    public static Pneumatics hatchPiston = new Pneumatics();
 
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
@@ -104,8 +105,9 @@ public class Robot extends TimedRobot
         testSeq.addSequential(test3);
         autonomousCommand = testSeq;*/
 
-        HatchClose test1 = new HatchClose();
-        HatchOpen test2 = new HatchOpen();
+        //TODO test this with motor to ensure HatchGrabCommand() works properly
+        HatchGrabCommand test1 = new HatchGrabCommand();
+        HatchGrabCommand test2 = new HatchGrabCommand();
         CommandGroup testGroup = new CommandGroup();
         testGroup.addSequential(test1);
         testGroup.addSequential(new WaitCommand(3));
@@ -135,8 +137,6 @@ public class Robot extends TimedRobot
         // teleop starts running. If you want the autonomous to
         // continue until interrupted by another command, remove
         // this line or comment it out.
-
-        oi.hatchButton.whenPressed(new HatchClose());
 
         if (autonomousCommand != null) 
         {

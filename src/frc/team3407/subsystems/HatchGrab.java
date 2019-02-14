@@ -9,7 +9,9 @@ public class HatchGrab extends Subsystem {
 
     private final static double speed = .5;
 
-    //used in HatchOpen and HatchClose
+    public static boolean isOpen = false;
+
+    //used in HatchGrabCommand
     //TODO determine counter threshold (5 is just a filler value)
     public final static int threshold = 10;
 

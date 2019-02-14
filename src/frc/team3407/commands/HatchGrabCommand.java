@@ -5,11 +5,11 @@ import frc.team3407.Robot;
 import frc.team3407.subsystems.HatchGrab;
 
 
-public class HatchOpen extends Command {
+public class HatchGrabCommand extends Command {
 
     private int counter = 0;
 
-    public HatchOpen() {
+    public HatchGrabCommand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         requires(Robot.hatchGrab);
@@ -33,7 +33,11 @@ public class HatchOpen extends Command {
     @Override
     protected void execute() {
 
-        Robot.hatchGrab.open();
+        if(HatchGrab.isOpen){
+            Robot.hatchGrab.close();
+        } else {
+            Robot.hatchGrab.open();
+        }
         counter++;
 
     }
@@ -71,6 +75,7 @@ public class HatchOpen extends Command {
      */
     @Override
     protected void end() {
+        HatchGrab.isOpen = !HatchGrab.isOpen;
         Robot.hatchGrab.stop();
     }
 
