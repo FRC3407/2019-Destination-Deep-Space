@@ -36,7 +36,7 @@ public class RobotMap
     public static int stickR = 1;
 
     //TODO add port number of joystick button
-    public static int hatchButton;
+    public static int hatchButton = 1;
     //hatch grabber
-    public static int talon = 5;
+    public final static int talon = 6;
 }

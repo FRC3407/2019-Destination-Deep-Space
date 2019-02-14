@@ -12,8 +12,11 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.team3407.commands.HatchClose;
+import frc.team3407.commands.HatchOpen;
 import frc.team3407.commands.TimedDrive;
 import frc.team3407.subsystems.DriveBase;
 import frc.team3407.subsystems.HatchGrab;
@@ -29,7 +32,7 @@ import frc.team3407.subsystems.HatchGrab;
 public class Robot extends TimedRobot 
 {
 
-    public static OI oi;
+    public static OI oi = new OI();
 
     public static DriveBase driveBase = new DriveBase();
 
@@ -44,7 +47,6 @@ public class Robot extends TimedRobot
      */
     @Override
     public void robotInit() {
-        oi = new OI();
         // chooser.addDefault("Default Auto", new ExampleCommand());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
@@ -93,14 +95,22 @@ public class Robot extends TimedRobot
          */
 
         //replace the following
-        TimedDrive test1 = new TimedDrive(1, .5, 0);
+        /*TimedDrive test1 = new TimedDrive(1, .5, 0);
         TimedDrive test2 = new TimedDrive(1, 0, .5);
         TimedDrive test3 = new TimedDrive(2, .5, .5);
         CommandGroup testSeq = new CommandGroup();
         testSeq.addSequential(test1);
         testSeq.addSequential(test2);
         testSeq.addSequential(test3);
-        autonomousCommand = testSeq;
+        autonomousCommand = testSeq;*/
+
+        HatchClose test1 = new HatchClose();
+        HatchOpen test2 = new HatchOpen();
+        CommandGroup testGroup = new CommandGroup();
+        testGroup.addSequential(test1);
+        testGroup.addSequential(new WaitCommand(3));
+        testGroup.addSequential(test2);
+        autonomousCommand = testGroup;
 
         // schedule the autonomous command (example)
         if (autonomousCommand != null) 
@@ -125,6 +135,9 @@ public class Robot extends TimedRobot
         // teleop starts running. If you want the autonomous to
         // continue until interrupted by another command, remove
         // this line or comment it out.
+
+        oi.hatchButton.whenPressed(new HatchClose());
+
         if (autonomousCommand != null) 
         {
             autonomousCommand.cancel();
@@ -146,7 +159,6 @@ public class Robot extends TimedRobot
     @Override
     public void testPeriodic() 
     {
-        System.out.println("Test");
-        driveBase.tank(0.4, 0.4);
+
     }
 }

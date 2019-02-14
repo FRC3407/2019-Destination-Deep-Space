@@ -1,18 +1,19 @@
 package frc.team3407.subsystems;
 
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.team3407.RobotMap;
 
 public class HatchGrab extends Subsystem {
 
-    private static double speed = .3;
+    private final static double speed = .5;
 
     //used in HatchOpen and HatchClose
     //TODO determine counter threshold (5 is just a filler value)
-    public final static int threshold = 5;
+    public final static int threshold = 10;
 
-    Talon talon = new Talon(RobotMap.talon);
+    Victor talon = new Victor(RobotMap.talon);
 
     public void initDefaultCommand(){}
 
@@ -23,6 +24,9 @@ public class HatchGrab extends Subsystem {
 
     public void open(){
         talon.set(speed);
+        //testing
+        //System.out.println(talon.isAlive());
+        //System.out.println(talon.get());
     }
 
     public void close(){
