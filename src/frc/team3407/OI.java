@@ -24,7 +24,7 @@ public class OI
         hatchGrabButton.whenPressed(new HatchGrabCommand());
 
         //triggers hatch piston mechanism
-        hatchPistonButton.whenPressed(new HatchPistonCommand());
+       // hatchPistonButton.whenPressed(new HatchPistonCommand());
 
     }
     // CREATING BUTTONS

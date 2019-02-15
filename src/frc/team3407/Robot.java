@@ -7,7 +7,6 @@
 
 package frc.team3407;
 
-import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
@@ -30,10 +29,7 @@ import frc.team3407.subsystems.HatchPiston;
  * project.
  */
 // If you rename or move this class, update the build.properties file in the project root
-public class Robot extends TimedRobot 
-{
-
-    public static OI oi = new OI();
+public class Robot extends TimedRobot {
 
     public static Cargo cargo = new Cargo();
 
@@ -45,6 +41,7 @@ public class Robot extends TimedRobot
 
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
+    public static OI oi = new OI();
 
     /**
      * This function is run when the robot is first started up and should be
@@ -55,8 +52,8 @@ public class Robot extends TimedRobot
         // chooser.addDefault("Default Auto", new ExampleCommand());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
-        CameraServer.getInstance().startAutomaticCapture("test0", 0);
-        CameraServer.getInstance().startAutomaticCapture("test1", 1);
+        //CameraServer.getInstance().startAutomaticCapture("test0", 0);
+        //CameraServer.getInstance().startAutomaticCapture("test1", 1);
         //testCam.setResolution(1280, 720);
         //testCam.setFPS(28);
     }

@@ -46,6 +46,6 @@ public class RobotMap
     //hatch piston
     public final static int hatchPistonButton = 1;
     public static final int armR = 7;
-    public static final int armL = 6;
+    public static final int armL = 8;
     public static double cargoSpeed = 0.7;
 }
