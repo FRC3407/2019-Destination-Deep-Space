@@ -27,9 +27,9 @@ public class RobotMap
 
     //drive base
     public final static int leftFront = 3;
-    public final static int leftBack = 1;
-    public final static int rightFront = 2;
-    public final static int rightBack = 0;
+    public final static int leftBack = 2;
+    public final static int rightFront = 4;
+    public final static int rightBack = 5  ;
 
     //joysticks
     public final static int stickL = 0;
@@ -45,4 +45,7 @@ public class RobotMap
 
     //hatch piston
     public final static int hatchPistonButton = 1;
+    public static final int armR = 7;
+    public static final int armL = 6;
+    public static double cargoSpeed = 0.7;
 }

@@ -17,6 +17,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3407.commands.HatchGrabCommand;
 import frc.team3407.commands.HatchPistonCommand;
+import frc.team3407.subsystems.Cargo;
 import frc.team3407.subsystems.DriveBase;
 import frc.team3407.subsystems.HatchGrab;
 import frc.team3407.subsystems.HatchPiston;
@@ -33,6 +34,8 @@ public class Robot extends TimedRobot
 {
 
     public static OI oi = new OI();
+
+    public static Cargo cargo = new Cargo();
 
     public static DriveBase driveBase = new DriveBase();
 
