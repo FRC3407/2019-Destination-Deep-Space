@@ -55,6 +55,9 @@ public class Robot extends TimedRobot
         CameraServer.getInstance().startAutomaticCapture("test1", 1);
         //testCam.setResolution(1280, 720);
         //testCam.setFPS(28);
+
+        //triggers hatch grab mechanism
+        oi.hatchGrabButton.whenPressed(new HatchGrabCommand());
     }
     /**
      * This function is called once each time the robot enters Disabled mode.
@@ -106,12 +109,13 @@ public class Robot extends TimedRobot
         autonomousCommand = testSeq;*/
 
         //TODO test this with motor to ensure HatchGrabCommand() works properly
+        //System.out.println("AutonomousInit");
         HatchGrabCommand test1 = new HatchGrabCommand();
-        //HatchGrabCommand test2 = new HatchGrabCommand();
+        HatchGrabCommand test2 = new HatchGrabCommand();
         CommandGroup testGroup = new CommandGroup();
         testGroup.addSequential(test1);
         testGroup.addSequential(new WaitCommand(3));
-        testGroup.addSequential(test1);
+        testGroup.addSequential(test2);
         autonomousCommand = testGroup;
 
         // schedule the autonomous command (example)
@@ -150,7 +154,6 @@ public class Robot extends TimedRobot
     @Override
     public void teleopPeriodic() 
     {
-        //oi.hatchGrabButton.whenPressed(new HatchGrabCommand());
 
         Scheduler.getInstance().run();
     }

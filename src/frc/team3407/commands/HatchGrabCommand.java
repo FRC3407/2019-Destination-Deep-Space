@@ -33,6 +33,7 @@ public class HatchGrabCommand extends Command {
     @Override
     protected void execute() {
 
+        //System.out.println("HatchGrabCommand");
         if(HatchGrab.isOpen){
             Robot.hatchGrab.close();
         } else {
