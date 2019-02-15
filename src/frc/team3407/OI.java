@@ -9,13 +9,24 @@ package frc.team3407;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.team3407.commands.HatchGrabCommand;
+import frc.team3407.commands.HatchPistonCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
-public class OI 
+public class OI
 {
+    //TODO test hatch grabber
+    public OI(){
+        //triggers hatch grab mechanism
+        hatchGrabButton.whenPressed(new HatchGrabCommand());
+
+        //triggers hatch piston mechanism
+        hatchPistonButton.whenPressed(new HatchPistonCommand());
+
+    }
     // CREATING BUTTONS
     // One type of button is a joystick button which is any button on a
     // joystick.

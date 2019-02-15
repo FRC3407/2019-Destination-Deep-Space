@@ -56,13 +56,6 @@ public class Robot extends TimedRobot
         CameraServer.getInstance().startAutomaticCapture("test1", 1);
         //testCam.setResolution(1280, 720);
         //testCam.setFPS(28);
-
-        //triggers hatch grab mechanism
-        oi.hatchGrabButton.whenPressed(new HatchGrabCommand());
-
-        //triggers hatch grab mechanism
-        oi.hatchPistonButton.whenPressed(new HatchPistonCommand());
-
     }
     /**
      * This function is called once each time the robot enters Disabled mode.
