@@ -26,20 +26,23 @@ public class RobotMap
     // public static int rangefinderModule = 1;
 
     //drive base
-    public static int leftFront = 3;
-    public static int leftBack = 1;
-    public static int rightFront = 2;
-    public static int rightBack = 0;
+    public final static int leftFront = 3;
+    public final static int leftBack = 1;
+    public final static int rightFront = 2;
+    public final static int rightBack = 0;
 
     //joysticks
-    public static int stickL = 0;
-    public static int stickR = 1;
+    public final static int stickL = 0;
+    public final static int stickR = 1;
 
-    public static int hatchGrabButton = 1;
     //hatch grabber
+    public final static int hatchGrabButton = 1;
     public final static int talon = 6;
 
     //double solenoid for hatch piston
-    public static int dSol1 = 6;
-    public static int dSol2 = 7;
+    public final static int dSol1 = 0;
+    public final static int dSol2 = 1;
+
+    //hatch piston
+    public final static int hatchPistonButton = 1;
 }

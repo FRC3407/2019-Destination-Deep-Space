@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3407.commands.HatchGrabCommand;
 import frc.team3407.subsystems.DriveBase;
 import frc.team3407.subsystems.HatchGrab;
-import frc.team3407.subsystems.Pneumatics;
+import frc.team3407.subsystems.HatchPiston;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -37,7 +37,7 @@ public class Robot extends TimedRobot
 
     public static HatchGrab hatchGrab = new HatchGrab();
 
-    public static Pneumatics hatchPiston = new Pneumatics();
+    public static HatchPiston hatchPiston = new HatchPiston();
 
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
@@ -107,11 +107,11 @@ public class Robot extends TimedRobot
 
         //TODO test this with motor to ensure HatchGrabCommand() works properly
         HatchGrabCommand test1 = new HatchGrabCommand();
-        HatchGrabCommand test2 = new HatchGrabCommand();
+        //HatchGrabCommand test2 = new HatchGrabCommand();
         CommandGroup testGroup = new CommandGroup();
         testGroup.addSequential(test1);
         testGroup.addSequential(new WaitCommand(3));
-        testGroup.addSequential(test2);
+        testGroup.addSequential(test1);
         autonomousCommand = testGroup;
 
         // schedule the autonomous command (example)
@@ -150,6 +150,8 @@ public class Robot extends TimedRobot
     @Override
     public void teleopPeriodic() 
     {
+        //oi.hatchGrabButton.whenPressed(new HatchGrabCommand());
+
         Scheduler.getInstance().run();
     }
 

@@ -75,6 +75,8 @@ public class HatchGrabCommand extends Command {
      */
     @Override
     protected void end() {
+        //TODO determine if resetting counter here is necessary (depends on how the command is called)
+        counter = 0;
         HatchGrab.isOpen = !HatchGrab.isOpen;
         Robot.hatchGrab.stop();
     }

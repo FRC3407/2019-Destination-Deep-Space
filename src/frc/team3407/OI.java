@@ -46,5 +46,6 @@ public class OI
     public Joystick stickL = new Joystick(RobotMap.stickL);
     public Joystick stickR = new Joystick(RobotMap.stickR);
 
-    public JoystickButton hatchButton = new JoystickButton(stickR, RobotMap.hatchGrabButton);
+    public JoystickButton hatchGrabButton = new JoystickButton(stickR, RobotMap.hatchGrabButton);
+    public JoystickButton hatchPistonButton = new JoystickButton(stickL, RobotMap.hatchPistonButton);
 }
