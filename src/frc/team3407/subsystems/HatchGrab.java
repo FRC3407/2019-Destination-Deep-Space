@@ -12,7 +12,7 @@ public class HatchGrab extends Subsystem {
     public static boolean isOpen = false;
 
     //used in HatchGrabCommand
-    //TODO determine counter threshold (5 is just a filler value)
+    //TODO determine counter threshold
     public final static int threshold = 10;
 
     Victor talon = new Victor(RobotMap.talon);

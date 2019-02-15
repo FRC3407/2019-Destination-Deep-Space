@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3407.commands.HatchGrabCommand;
+import frc.team3407.commands.HatchPistonCommand;
 import frc.team3407.subsystems.DriveBase;
 import frc.team3407.subsystems.HatchGrab;
 import frc.team3407.subsystems.HatchPiston;
@@ -58,6 +59,10 @@ public class Robot extends TimedRobot
 
         //triggers hatch grab mechanism
         oi.hatchGrabButton.whenPressed(new HatchGrabCommand());
+
+        //triggers hatch grab mechanism
+        oi.hatchPistonButton.whenPressed(new HatchPistonCommand());
+
     }
     /**
      * This function is called once each time the robot enters Disabled mode.

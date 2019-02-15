@@ -2,6 +2,7 @@ package frc.team3407.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team3407.Robot;
+import frc.team3407.subsystems.HatchPiston;
 
 
 public class HatchPistonCommand extends Command {
@@ -18,7 +19,6 @@ public class HatchPistonCommand extends Command {
      */
     @Override
     protected void initialize() {
-
     }
 
 
@@ -28,7 +28,11 @@ public class HatchPistonCommand extends Command {
      */
     @Override
     protected void execute() {
-
+        if(HatchPiston.isExtended){
+            Robot.hatchPiston.pull();
+        } else {
+            Robot.hatchPiston.push();
+        }
     }
 
 
@@ -52,7 +56,7 @@ public class HatchPistonCommand extends Command {
     @Override
     protected boolean isFinished() {
         // TODO: Make this return true when this Command no longer needs to run execute()
-        return false;
+        return true;
     }
 
 
@@ -64,7 +68,7 @@ public class HatchPistonCommand extends Command {
      */
     @Override
     protected void end() {
-
+        HatchPiston.isExtended = !HatchPiston.isExtended;
     }
 
 
