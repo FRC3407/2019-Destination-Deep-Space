@@ -74,7 +74,7 @@ public class HatchGrabCommand extends Command {
     protected boolean isFinished() {
         // Make this return true when this Command no longer needs to run execute()
         //return counter >= HatchGrab.threshold;'
-        return true;
+        return false;
     }
 
 
