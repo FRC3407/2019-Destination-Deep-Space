@@ -6,7 +6,7 @@ import frc.team3407.subsystems.DriveBase;
 
 public class DriveCommand extends Command {
 
-    private static double multConstant = .5;
+    private static double multConstant = .7;
 
     public DriveCommand() {
         // Use requires() here to declare subsystem dependencies

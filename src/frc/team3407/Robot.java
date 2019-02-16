@@ -7,6 +7,8 @@
 
 package frc.team3407;
 
+import edu.wpi.cscore.VideoSource;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
@@ -51,10 +53,10 @@ public class Robot extends TimedRobot {
         // chooser.addDefault("Default Auto", new ExampleCommand());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
-        //CameraServer.getInstance().startAutomaticCapture("test0", 0);
+        VideoSource testCam = CameraServer.getInstance().startAutomaticCapture("test0", 0);
         //CameraServer.getInstance().startAutomaticCapture("test1", 1);
-        //testCam.setResolution(1280, 720);
-        //testCam.setFPS(28);
+        testCam.setResolution(480, 360);
+        testCam.setFPS(28);
     }
     /**
      * This function is called once each time the robot enters Disabled mode.
