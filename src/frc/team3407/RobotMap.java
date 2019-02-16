@@ -39,6 +39,7 @@ public class RobotMap
     public final static int hatchGrabButton = 1;
     public final static int hatchGrabOpen = 3;
     public final static int hatchGrabClose = 2;
+    //TODO ensure correct port
     public final static int talon = 6;
 
     //double solenoid for hatch piston
@@ -47,7 +48,10 @@ public class RobotMap
 
     //hatch piston
     public final static int hatchPistonButton = 1;
+    public final static int compressor = 0;
+    //cargo
+    //TODO determine ports (7, 8, 9 are open)
     public static final int armR = 7;
     public static final int armL = 8;
-    public static double cargoSpeed = 0.7;
+    public static double cargoSpeed = 0.5;
 }

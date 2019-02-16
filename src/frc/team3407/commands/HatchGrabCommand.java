@@ -89,7 +89,7 @@ public class HatchGrabCommand extends Command {
         //TODO determine if resetting counter here is necessary (depends on how the command is called)
         //System.out.println(System.currentTimeMillis());
         counter = 0;
-        HatchGrab.isOpen = !HatchGrab.isOpen;
+        //HatchGrab.isOpen = !HatchGrab.isOpen;
         Robot.hatchGrab.stop();
     }
 
@@ -110,6 +110,7 @@ public class HatchGrabCommand extends Command {
      */
     @Override
     protected void interrupted() {
+        Robot.hatchGrab.stop();
         super.interrupted();
     }
 }

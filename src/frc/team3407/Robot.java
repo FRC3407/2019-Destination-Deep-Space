@@ -107,13 +107,13 @@ public class Robot extends TimedRobot {
 
         //TODO test this with motor to ensure HatchGrabCommand() works properly
         //System.out.println("AutonomousInit");
-        HatchGrabCommand test1 = new HatchGrabCommand();
-        HatchGrabCommand test2 = new HatchGrabCommand();
-        CommandGroup testGroup = new CommandGroup();
-        testGroup.addSequential(test1);
-        testGroup.addSequential(new WaitCommand(3));
-        testGroup.addSequential(test2);
-        autonomousCommand = testGroup;
+        //HatchGrabCommand test1 = new HatchGrabCommand();
+        //HatchGrabCommand test2 = new HatchGrabCommand();
+        //CommandGroup testGroup = new CommandGroup();
+        //testGroup.addSequential(test1);
+        //testGroup.addSequential(new WaitCommand(3));
+        //testGroup.addSequential(test2);
+        //autonomousCommand = testGroup;
 
         // schedule the autonomous command (example)
         if (autonomousCommand != null) 
