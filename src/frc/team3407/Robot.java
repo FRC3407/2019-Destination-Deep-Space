@@ -53,10 +53,14 @@ public class Robot extends TimedRobot {
         // chooser.addDefault("Default Auto", new ExampleCommand());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
-        VideoSource testCam = CameraServer.getInstance().startAutomaticCapture("test0", 0);
+        VideoSource highCam = CameraServer.getInstance().startAutomaticCapture("High Camera", 0);
+        VideoSource lowCam = CameraServer.getInstance().startAutomaticCapture("Low Camera", 1);
+
         //CameraServer.getInstance().startAutomaticCapture("test1", 1);
-        testCam.setResolution(480, 360);
-        testCam.setFPS(28);
+        lowCam.setResolution(250 ,150);
+        lowCam.setFPS(10);
+        highCam.setResolution(380, 250);
+        highCam.setFPS(22);
     }
     /**
      * This function is called once each time the robot enters Disabled mode.
