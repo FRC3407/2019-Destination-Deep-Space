@@ -48,7 +48,7 @@ public class HatchGrabCommand extends Command {
         } else {
             Robot.hatchGrab.close();
         }
-        counter++;
+        //counter++;
 
     }
 
@@ -73,7 +73,8 @@ public class HatchGrabCommand extends Command {
     @Override
     protected boolean isFinished() {
         // Make this return true when this Command no longer needs to run execute()
-        return counter >= HatchGrab.threshold;
+        //return counter >= HatchGrab.threshold;'
+        return true;
     }
 
 
