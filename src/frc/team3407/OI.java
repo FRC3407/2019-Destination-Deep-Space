@@ -21,10 +21,12 @@ public class OI
     //TODO test hatch grabber
     public OI(){
         //triggers hatch grab mechanism
-        hatchGrabButton.whenPressed(new HatchGrabCommand());
+        //hatchGrabButton.whenPressed(new HatchGrabCommand());
+        hatchGrabOpen.whileHeld(new HatchGrabCommand(true));
+        hatchGrabClose.whileHeld(new HatchGrabCommand(false));
 
         //triggers hatch piston mechanism
-       // hatchPistonButton.whenPressed(new HatchPistonCommand());
+        hatchPistonButton.whenPressed(new HatchPistonCommand());
 
     }
     // CREATING BUTTONS
@@ -59,4 +61,6 @@ public class OI
 
     public JoystickButton hatchGrabButton = new JoystickButton(stickR, RobotMap.hatchGrabButton);
     public JoystickButton hatchPistonButton = new JoystickButton(stickL, RobotMap.hatchPistonButton);
+    public JoystickButton hatchGrabOpen = new JoystickButton(stickR, RobotMap.hatchGrabOpen);
+    public JoystickButton hatchGrabClose = new JoystickButton(stickR, RobotMap.hatchGrabClose);
 }

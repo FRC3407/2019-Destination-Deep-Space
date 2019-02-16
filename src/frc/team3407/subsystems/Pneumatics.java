@@ -7,7 +7,7 @@ import frc.team3407.RobotMap;
 
 public class Pneumatics extends Subsystem {
 
-    private DoubleSolenoid doubleSolenoid = new DoubleSolenoid(RobotMap.dSol1, RobotMap.dSol2);
+    //private DoubleSolenoid doubleSolenoid = new DoubleSolenoid(RobotMap.dSol1, RobotMap.dSol2);
 
     public static boolean isExtended = false;
 
@@ -18,11 +18,11 @@ public class Pneumatics extends Subsystem {
     public void initDefaultCommand() {}
 
     public void push(){
-        doubleSolenoid.set(DoubleSolenoid.Value.kForward);
+        //doubleSolenoid.set(DoubleSolenoid.Value.kForward);
     }
 
     public void pull(){
-        doubleSolenoid.set(DoubleSolenoid.Value.kReverse);
+        //doubleSolenoid.set(DoubleSolenoid.Value.kReverse);
     }
 
     //public void off(){ doubleSolenoid.set(DoubleSolenoid.Value.kOff); }
