@@ -156,12 +156,19 @@ public class Robot extends TimedRobot {
         Scheduler.getInstance().run();
     }
 
+    @Override
+    public void testInit() {
+        System.out.println("Test init..");
+
+    }
+
     /**
      * This function is called periodically during test mode.
      */
     @Override
     public void testPeriodic() 
     {
-
+        driveBase.tank(0.4, 0.4);
+        System.out.println("Test..");
     }
 }
