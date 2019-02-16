@@ -2,14 +2,14 @@ package frc.team3407.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team3407.Robot;
-import frc.team3407.subsystems.HatchPiston;
+import frc.team3407.subsystems.Pneumatics;
 
 
 public class HatchPistonCommand extends Command {
     public HatchPistonCommand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(Robot.hatchPiston);
+        requires(Robot.pneumatics);
     }
 
 
@@ -28,10 +28,10 @@ public class HatchPistonCommand extends Command {
      */
     @Override
     protected void execute() {
-        if(HatchPiston.isExtended){
-            Robot.hatchPiston.pull();
+        if(Pneumatics.isExtended){
+            Robot.pneumatics.pull();
         } else {
-            Robot.hatchPiston.push();
+            Robot.pneumatics.push();
         }
     }
 
@@ -68,7 +68,7 @@ public class HatchPistonCommand extends Command {
      */
     @Override
     protected void end() {
-        HatchPiston.isExtended = !HatchPiston.isExtended;
+        Pneumatics.isExtended = !Pneumatics.isExtended;
     }
 
 

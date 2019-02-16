@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.team3407.RobotMap;
 
-public class HatchPiston extends Subsystem {
+public class Pneumatics extends Subsystem {
 
     private DoubleSolenoid doubleSolenoid = new DoubleSolenoid(RobotMap.dSol1, RobotMap.dSol2);
 

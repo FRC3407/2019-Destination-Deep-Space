@@ -15,11 +15,10 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3407.commands.HatchGrabCommand;
-import frc.team3407.commands.HatchPistonCommand;
 import frc.team3407.subsystems.Cargo;
 import frc.team3407.subsystems.DriveBase;
 import frc.team3407.subsystems.HatchGrab;
-import frc.team3407.subsystems.HatchPiston;
+import frc.team3407.subsystems.Pneumatics;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -37,7 +36,7 @@ public class Robot extends TimedRobot {
 
     public static HatchGrab hatchGrab = new HatchGrab();
 
-    public static HatchPiston hatchPiston = new HatchPiston();
+    public static Pneumatics pneumatics = new Pneumatics();
 
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
