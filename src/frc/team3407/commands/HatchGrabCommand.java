@@ -4,15 +4,22 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.team3407.Robot;
 import frc.team3407.subsystems.HatchGrab;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 
 public class HatchGrabCommand extends Command {
 
     private int counter = 0;
+    private boolean opening;
 
-    public HatchGrabCommand() {
+    public HatchGrabCommand(boolean opening) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         requires(Robot.hatchGrab);
+        this.opening = opening;
     }
 
 
@@ -34,10 +41,12 @@ public class HatchGrabCommand extends Command {
     protected void execute() {
 
         //System.out.println("HatchGrabCommand");
-        if(HatchGrab.isOpen){
-            Robot.hatchGrab.close();
-        } else {
+        //System.out.println();
+        //System.out.println(System.currentTimeMillis());
+        if(opening){
             Robot.hatchGrab.open();
+        } else {
+            Robot.hatchGrab.close();
         }
         counter++;
 
@@ -77,6 +86,7 @@ public class HatchGrabCommand extends Command {
     @Override
     protected void end() {
         //TODO determine if resetting counter here is necessary (depends on how the command is called)
+        //System.out.println(System.currentTimeMillis());
         counter = 0;
         HatchGrab.isOpen = !HatchGrab.isOpen;
         Robot.hatchGrab.stop();

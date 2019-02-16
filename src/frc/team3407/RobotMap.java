@@ -37,6 +37,8 @@ public class RobotMap
 
     //hatch grabber
     public final static int hatchGrabButton = 1;
+    public final static int hatchGrabOpen = 3;
+    public final static int hatchGrabClose = 2;
     public final static int talon = 6;
 
     //double solenoid for hatch piston
