@@ -54,6 +54,7 @@ public class RobotMap
     public static final int armR = 7;
     public static final int armL = 8;
     public static double cargoSpeed = 0.5;
+    public static double cargoSpeedMult = .8;
 
     //elevator
     public  static final double elevatorSpeed = 0.7; //TODO: tune value

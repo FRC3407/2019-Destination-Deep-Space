@@ -6,7 +6,9 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.team3407.RobotMap;
 
 public class Cargo extends Subsystem {
+
     private static final double speed = RobotMap.cargoSpeed;
+
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     Victor armL = new Victor(RobotMap.armL);
@@ -16,7 +18,11 @@ public class Cargo extends Subsystem {
         armL.set(speed);
         armR.set(speed);
     }
-    public void outake(){
+    public void hold(){
+        armL.set();
+        armR.set();
+    }
+    public void outtake(){
         armL.set(-speed);
         armR.set(-speed);
     }

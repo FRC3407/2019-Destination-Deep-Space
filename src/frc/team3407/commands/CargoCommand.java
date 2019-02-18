@@ -4,11 +4,15 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.team3407.Robot;
 
 
-public class CargoOut extends Command {
-    public CargoOut() {
+public class CargoCommand extends Command {
+
+    private boolean hasBall;
+
+    public CargoCommand(boolean hasBall) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         requires(Robot.cargo);
+        this.hasBall = hasBall;
     }
 
 
@@ -28,7 +32,11 @@ public class CargoOut extends Command {
      */
     @Override
     protected void execute() {
-        Robot.cargo.outtake();
+        if(hasBall){
+            Robot.cargo.outtake();
+        } else {
+            Robot.cargo.intake();
+        }
     }
 
 

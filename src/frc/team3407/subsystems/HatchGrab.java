@@ -9,7 +9,7 @@ public class HatchGrab extends Subsystem {
 
     private final static double speed = RobotMap.hatchGrabSpeed;
 
-    public static boolean isOpen = false;
+    //public static boolean isOpen = false;
 
     //used in HatchGrabCommand
     //TODO determine counter threshold
