@@ -34,9 +34,17 @@ deploy {
     }
 }
 
+repositories {
+    maven {
+        url "http://first.wpi.edu/FRC/roborio/maven/release/"
+    }
+    mavenCentral()
+}
 // Defining my dependencies. In this case, WPILib (+ friends), and vendor libraries.
 // Also defines JUnit 4.
+
 dependencies {
+    compile 'edu.wpi.first.wpilibj:wpilibj-java:version'
     compile wpi.deps.wpilib()
     compile wpi.deps.vendor.java()
     nativeZip wpi.deps.vendor.jni(wpi.platforms.roborio)
