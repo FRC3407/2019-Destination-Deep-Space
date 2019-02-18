@@ -17,10 +17,7 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team3407.commands.HatchGrabCommand;
-import frc.team3407.subsystems.Cargo;
-import frc.team3407.subsystems.DriveBase;
-import frc.team3407.subsystems.HatchGrab;
-import frc.team3407.subsystems.Pneumatics;
+import frc.team3407.subsystems.*;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -33,6 +30,8 @@ import frc.team3407.subsystems.Pneumatics;
 public class Robot extends TimedRobot {
 
     public static Cargo cargo = new Cargo();
+
+    public static Elevator elevator = new Elevator();
 
     public static DriveBase driveBase = new DriveBase();
 
