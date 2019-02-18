@@ -10,21 +10,27 @@ public class Elevator extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
+
     private static double speed = RobotMap.elevatorSpeed;
+
     Victor elevator1 = new Victor(RobotMap.elevator1);
     Victor elevator2 = new Victor(RobotMap.elevator2);
 
     private SpeedControllerGroup elevatorMotorGroup = new SpeedControllerGroup(elevator1, elevator2);
 
-    public void moveUp(){//input speed?
+    public void moveUp(){
+        //TODO: "input speed?" -kelton (not sure what this means)
         elevatorMotorGroup.set(speed);
     }
+
     public void moveDown(){
         elevatorMotorGroup.set(-speed);
     }
+
     public void stop(){
-        elevatorMotorGroup.set(0);
+        elevatorMotorGroup.stopMotor();
     }
+
 
 
     public void initDefaultCommand() {

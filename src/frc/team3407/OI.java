@@ -10,6 +10,7 @@ package frc.team3407;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.team3407.commands.CargoCommand;
+import frc.team3407.commands.ElevatorCommand;
 import frc.team3407.commands.HatchGrabCommand;
 import frc.team3407.commands.HatchPistonCommand;
 
@@ -19,7 +20,7 @@ import frc.team3407.commands.HatchPistonCommand;
  */
 public class OI
 {
-    //TODO test hatch grabber
+    //TODO test everything (especially elevator and cargo arms)
     public OI(){
         //triggers hatch grab mechanism
         //hatchGrabButton.whenPressed(new HatchGrabCommand());
@@ -34,7 +35,12 @@ public class OI
         //cargo arms
         cargoIn.whileHeld(new CargoCommand(false));
         cargoOut.whileHeld(new CargoCommand(true));
+
+        //elevator
+        elevatorUp.whileHeld(new ElevatorCommand(true));
+        elevatorDown.whileHeld(new ElevatorCommand(false));
     }
+
     // CREATING BUTTONS
     // One type of button is a joystick button which is any button on a
     // joystick.

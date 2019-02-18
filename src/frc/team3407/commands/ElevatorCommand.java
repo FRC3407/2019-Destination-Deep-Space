@@ -5,11 +5,13 @@ import frc.team3407.Robot;
 
 
 public class ElevatorCommand extends Command {
-    private static boolean movingUp;
-    public ElevatorCommand(boolean up) {
+
+    private boolean movingUp;
+
+    public ElevatorCommand(boolean movingUp) {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.elevator);
-        movingUp = up;
+        this.movingUp = movingUp;
 
     }
 
