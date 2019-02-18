@@ -35,11 +35,15 @@ public class RobotMap
     //joysticks
     public final static int stickL = 0;
     public final static int stickR = 1;
+    public final static int stick3 = 2;
 
     //hatch grabber
-    public final static int hatchGrabButton = 1;
-    public final static int hatchGrabOpen = 3;
-    public final static int hatchGrabClose = 2;
+    //public final static int hatchGrabButton = 1;
+    public final static int hatchGrabOpen1 = 4;
+    public final static int hatchGrabOpen2 = 5;
+    public final static int hatchGrabClose1 = 2;
+    public final static int hatchGrabClose2 = 3;
+
     public final static double hatchGrabSpeed = .35;
     public final static int talon = 6;
 
@@ -53,11 +57,14 @@ public class RobotMap
     //TODO determine ports (7, 8, 9 are open)
     public static final int armR = 7;
     public static final int armL = 8;
-    public static double cargoSpeed = 0.5;
-    public static double cargoSpeedMult = .8;
+    //TODO tune speeds, especially hold speed
+    public static final double cargoSpeed = 0.5;
+    public static final double cargoHoldSpeed = .8;
+    public static final int cargoIn = 3;
+    public static final int cargoOut = 2;
 
     //elevator
-    public  static final double elevatorSpeed = 0.7; //TODO: tune value
+    public static final double elevatorSpeed = 0.7; //TODO: tune value
     public static final int elevator1 = 0; //TODO: setup the correct port
     public static final int elevator2 = 1; //TODO: port
     public static int elevatorDown = 3;

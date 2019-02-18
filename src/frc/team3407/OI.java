@@ -9,6 +9,7 @@ package frc.team3407;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.team3407.commands.CargoCommand;
 import frc.team3407.commands.HatchGrabCommand;
 import frc.team3407.commands.HatchPistonCommand;
 
@@ -22,12 +23,17 @@ public class OI
     public OI(){
         //triggers hatch grab mechanism
         //hatchGrabButton.whenPressed(new HatchGrabCommand());
-        hatchGrabOpen.whileHeld(new HatchGrabCommand(true));
-        hatchGrabClose.whileHeld(new HatchGrabCommand(false));
+        hatchGrabOpen1.whileHeld(new HatchGrabCommand(true));
+        hatchGrabOpen2.whileHeld(new HatchGrabCommand(true));
+        hatchGrabClose1.whileHeld(new HatchGrabCommand(false));
+        hatchGrabClose2.whileHeld(new HatchGrabCommand(false));
 
         //triggers hatch piston mechanism
         hatchPistonButton.whenPressed(new HatchPistonCommand());
 
+        //cargo arms
+        cargoIn.whileHeld(new CargoCommand(false));
+        cargoOut.whileHeld(new CargoCommand(true));
     }
     // CREATING BUTTONS
     // One type of button is a joystick button which is any button on a
@@ -58,11 +64,18 @@ public class OI
     // button.whenReleased(new ExampleCommand());
     public Joystick stickL = new Joystick(RobotMap.stickL);
     public Joystick stickR = new Joystick(RobotMap.stickR);
+    public Joystick stick3 = new Joystick(RobotMap.stick3);
 
-    public JoystickButton hatchGrabButton = new JoystickButton(stickR, RobotMap.hatchGrabButton);
-    public JoystickButton hatchPistonButton = new JoystickButton(stickL, RobotMap.hatchPistonButton);
-    public JoystickButton hatchGrabOpen = new JoystickButton(stickR, RobotMap.hatchGrabOpen);
-    public JoystickButton hatchGrabClose = new JoystickButton(stickR, RobotMap.hatchGrabClose);
-    private JoystickButton elevatorUp = new JoystickButton(stickL,RobotMap.elevatorUp);
-    private JoystickButton elevatorDown = new JoystickButton(stickL, RobotMap.elevatorDown);
+    //public JoystickButton hatchGrabButton = new JoystickButton(stickR, RobotMap.hatchGrabButton);
+    public JoystickButton hatchPistonButton = new JoystickButton(stickR, RobotMap.hatchPistonButton);
+    public JoystickButton hatchGrabOpen1 = new JoystickButton(stickR, RobotMap.hatchGrabOpen1);
+    public JoystickButton hatchGrabOpen2 = new JoystickButton(stickR, RobotMap.hatchGrabOpen2);
+    public JoystickButton hatchGrabClose1 = new JoystickButton(stickR, RobotMap.hatchGrabClose1);
+    public JoystickButton hatchGrabClose2 = new JoystickButton(stickR, RobotMap.hatchGrabClose2);
+
+    public JoystickButton cargoIn = new JoystickButton(stickL, RobotMap.cargoIn);
+    public JoystickButton cargoOut = new JoystickButton(stickL, RobotMap.cargoOut);
+
+    private JoystickButton elevatorUp = new JoystickButton(stick3,RobotMap.elevatorUp);
+    private JoystickButton elevatorDown = new JoystickButton(stick3, RobotMap.elevatorDown);
 }

@@ -6,13 +6,13 @@ import frc.team3407.Robot;
 
 public class CargoCommand extends Command {
 
-    private boolean hasBall;
+    private boolean isIntaking;
 
-    public CargoCommand(boolean hasBall) {
+    public CargoCommand(boolean isIntaking) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         requires(Robot.cargo);
-        this.hasBall = hasBall;
+        this.isIntaking = isIntaking;
     }
 
 
@@ -32,10 +32,10 @@ public class CargoCommand extends Command {
      */
     @Override
     protected void execute() {
-        if(hasBall){
-            Robot.cargo.outtake();
-        } else {
+        if(isIntaking){
             Robot.cargo.intake();
+        } else {
+            Robot.cargo.outtake();
         }
     }
 
@@ -72,7 +72,11 @@ public class CargoCommand extends Command {
      */
     @Override
     protected void end() {
-        Robot.cargo.stop();
+        if(isIntaking){
+            Robot.cargo.hold();
+        } else {
+            Robot.cargo.stop();
+        }
     }
 
 
