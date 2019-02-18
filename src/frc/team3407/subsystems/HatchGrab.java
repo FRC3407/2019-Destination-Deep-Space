@@ -7,7 +7,7 @@ import frc.team3407.RobotMap;
 
 public class HatchGrab extends Subsystem {
 
-    private final static double speed = .35;
+    private final static double speed = RobotMap.hatchGrabSpeed;
 
     public static boolean isOpen = false;
 

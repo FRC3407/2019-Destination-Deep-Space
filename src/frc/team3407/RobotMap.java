@@ -30,6 +30,7 @@ public class RobotMap
     public final static int leftBack = 2;
     public final static int rightFront = 4;
     public final static int rightBack = 5  ;
+    public final static double driveSpeed  = .7;
 
     //joysticks
     public final static int stickL = 0;
@@ -39,19 +40,23 @@ public class RobotMap
     public final static int hatchGrabButton = 1;
     public final static int hatchGrabOpen = 3;
     public final static int hatchGrabClose = 2;
-    //TODO ensure correct port
+    public final static double hatchGrabSpeed = .35;
     public final static int talon = 6;
 
     //double solenoid for hatch piston
-    public final static int dSol1 = 0;
-    public final static int dSol2 = 1;
+    public final static int dSolClose = 0; //close
+    public final static int dSolOpen = 1; //open (on lambda)
 
     //hatch piston
     public final static int hatchPistonButton = 1;
-    public final static int compressor = 0;
     //cargo
     //TODO determine ports (7, 8, 9 are open)
     public static final int armR = 7;
     public static final int armL = 8;
     public static double cargoSpeed = 0.5;
+
+    //elevator
+    public  static final double elevatorSpeed = 0.7; //TODO: tune value
+    public static final int elevator1 = 0; //TODO: setup the correct port
+    public static final int elevator2 = 1; //TODO: port
 }

@@ -1,18 +1,16 @@
 package frc.team3407.subsystems;
 
 
-import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.team3407.RobotMap;
 
 public class Pneumatics extends Subsystem {
 
-    private DoubleSolenoid doubleSolenoid = new DoubleSolenoid(RobotMap.dSol1, RobotMap.dSol2);
+    private DoubleSolenoid doubleSolenoid = new DoubleSolenoid(RobotMap.dSolOpen, RobotMap.dSolClose); //expects open, close
     //private Compressor compressor = new Compressor(RobotMap.compressor);
 
     public static boolean isExtended = false;
-
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 

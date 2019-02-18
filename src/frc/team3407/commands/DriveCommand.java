@@ -2,11 +2,12 @@ package frc.team3407.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team3407.Robot;
+import frc.team3407.RobotMap;
 import frc.team3407.subsystems.DriveBase;
 
 public class DriveCommand extends Command {
 
-    private static double multConstant = .7;
+    private static double multConstant = RobotMap.driveSpeed;
 
     public DriveCommand() {
         // Use requires() here to declare subsystem dependencies
