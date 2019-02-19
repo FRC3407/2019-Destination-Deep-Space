@@ -58,8 +58,8 @@ public class Robot extends TimedRobot {
         //CameraServer.getInstance().startAutomaticCapture("test1", 1);
         lowCam.setResolution(250 ,150);
         lowCam.setFPS(10);
-        highCam.setResolution(380, 250);
-        highCam.setFPS(22);
+        highCam.setResolution(360, 240);
+        highCam.setFPS(20);
     }
     /**
      * This function is called once each time the robot enters Disabled mode.
