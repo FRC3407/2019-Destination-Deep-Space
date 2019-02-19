@@ -9,6 +9,7 @@ package frc.team3407;
 
 import edu.wpi.cscore.VideoSource;
 import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -35,6 +36,8 @@ public class Robot extends TimedRobot {
     public static HatchGrab hatchGrab = new HatchGrab();
 
     public static Pneumatics pneumatics = new Pneumatics();
+
+    public static ElevatorEncoder encoder = new ElevatorEncoder();
 
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();

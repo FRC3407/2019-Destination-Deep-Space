@@ -39,6 +39,11 @@ public class OI
         //elevator
         elevatorUp.whileHeld(new ElevatorCommand(true));
         elevatorDown.whileHeld(new ElevatorCommand(false));
+
+        //TODO: WIP
+        //spooky elevator code (with encoder)
+        //elevatorUp.whenPressed(new ElevatorCommand(true));
+        //elevatorDown.whenPressed(new ElevatorCommand(false));
     }
 
     // CREATING BUTTONS

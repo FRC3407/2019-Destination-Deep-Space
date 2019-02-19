@@ -7,6 +7,9 @@
 
 package frc.team3407;
 
+import edu.wpi.first.wpilibj.CounterBase;
+import edu.wpi.first.wpilibj.Encoder;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -68,4 +71,9 @@ public class RobotMap
     public static final int elevatorMotor = 0; //TODO: setup the correct port
     public static int elevatorDown = 3;
     public static int elevatorUp = 2;
+    //encoder
+    public static final int encoderInput1 = 0;
+    public static final int encoderInput2 = 1;
+    public static final boolean encoderReverseDirection = false;
+    public static final CounterBase.EncodingType encoderType = Encoder.EncodingType.k4X;
 }
