@@ -13,22 +13,19 @@ public class Elevator extends Subsystem {
 
     private static double speed = RobotMap.elevatorSpeed;
 
-    Victor elevator1 = new Victor(RobotMap.elevator1);
-    Victor elevator2 = new Victor(RobotMap.elevator2);
-
-    private SpeedControllerGroup elevatorMotorGroup = new SpeedControllerGroup(elevator1, elevator2);
+    Victor elevatorMotor = new Victor(RobotMap.elevatorMotor);
 
     public void moveUp(){
         //TODO: "input speed?" -kelton (not sure what this means)
-        elevatorMotorGroup.set(speed);
+        elevatorMotor.set(speed);
     }
 
     public void moveDown(){
-        elevatorMotorGroup.set(-speed);
+        elevatorMotor.set(-speed);
     }
 
     public void stop(){
-        elevatorMotorGroup.stopMotor();
+        elevatorMotor.stopMotor();
     }
 
 

@@ -65,8 +65,7 @@ public class RobotMap
 
     //elevator
     public static final double elevatorSpeed = 0.7; //TODO: tune value
-    public static final int elevator1 = 0; //TODO: setup the correct port
-    public static final int elevator2 = 1; //TODO: port
+    public static final int elevatorMotor = 0; //TODO: setup the correct port
     public static int elevatorDown = 3;
     public static int elevatorUp = 2;
 }
