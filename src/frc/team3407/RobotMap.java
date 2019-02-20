@@ -76,4 +76,6 @@ public class RobotMap
     public static final int encoderInput2 = 1;
     public static final boolean encoderReverseDirection = false;
     public static final CounterBase.EncodingType encoderType = Encoder.EncodingType.k4X;
+    public static final int limitSwitch = 4; //TODO change port
+    public static final double elevatorHoldSpeed = .5; //TODO: find correct value
 }

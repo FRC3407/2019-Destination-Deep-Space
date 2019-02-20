@@ -1,6 +1,7 @@
 package frc.team3407.subsystems;
 
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -14,12 +15,20 @@ public class Elevator extends Subsystem {
     private static double speed = RobotMap.elevatorSpeed;
 
     Victor elevatorMotor = new Victor(RobotMap.elevatorMotor);
+    DigitalInput limitSwitch = new DigitalInput(RobotMap.limitSwitch);
 
     public void moveUp(){
         //TODO: "input speed?" -kelton (not sure what this means)
         elevatorMotor.set(speed);
     }
 
+    public void hold(){
+        elevatorMotor.set(RobotMap.elevatorHoldSpeed);
+    }
+
+    public boolean getLimitSwitch(){
+        return limitSwitch.get();
+    }
     public void moveDown(){
         elevatorMotor.set(-speed);
     }
