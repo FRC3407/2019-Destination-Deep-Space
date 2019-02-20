@@ -53,8 +53,8 @@ public class RobotMap
     //double solenoid for hatch piston
     public final static int dSolClose = 0; //ports accurate for lambda, will need update for Phil
     public final static int dSolOpen = 1; //TODO: update ports for Phil
-
-    //hatch piston
+    //pnuematics
+    public static final int singleSol = 3; //TODO: set correct port
     public final static int hatchPistonButton = 1;
     //cargo
     //TODO determine ports (7, 8, 9 are open)
