@@ -30,7 +30,7 @@ public class ElevatorCommand extends Command {
      */
     @Override
     protected void execute() {
-        if(movingUp && !Robot.elevator.getLimitSwitch()){
+        if(movingUp && (!Robot.elevator.getTopSwitch() || !Robot.elevator.getBottomSwitch()) ){
             Robot.elevator.moveUp();
         } else if (movingUp) {
             Robot.elevator.hold();

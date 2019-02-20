@@ -13,8 +13,8 @@ public class Cargo extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-    Victor armL = new Victor(RobotMap.armL);
-    Victor armR = new Victor(RobotMap.armR);
+    private Victor armL = new Victor(RobotMap.armL);
+    private Victor armR = new Victor(RobotMap.armR);
 
     public void intake(){
         armL.set(speed);
