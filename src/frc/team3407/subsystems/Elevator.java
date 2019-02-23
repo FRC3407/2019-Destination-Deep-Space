@@ -17,8 +17,7 @@ public class Elevator extends Subsystem {
     private DigitalInput topSwitch = new DigitalInput(RobotMap.topSwitch); //TODO have the limit switches reset the encoder
     private DigitalInput bottomSwitch = new DigitalInput(RobotMap.bottomSwitch);
 
-    public void moveUp(){
-        //TODO: "input speed?" -kelton (not sure what this means)
+    public void moveUp(){ //maybe this take a speed input (i.e .set(speed*input))
         elevatorMotor.set(speed);
     }
 

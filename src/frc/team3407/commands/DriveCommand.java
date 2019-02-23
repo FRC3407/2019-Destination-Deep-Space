@@ -7,8 +7,6 @@ import frc.team3407.subsystems.DriveBase;
 
 public class DriveCommand extends Command {
 
-    private static double multConstant = RobotMap.driveSpeed;
-
     public DriveCommand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -32,7 +30,8 @@ public class DriveCommand extends Command {
      */
     @Override
     protected void execute() {
-        Robot.driveBase.tank(-Robot.oi.stickL.getY()*multConstant, -Robot.oi.stickR.getY()*multConstant);
+        double multConstant = RobotMap.driveSpeed;
+        Robot.driveBase.tank(-Robot.oi.stickL.getY()* multConstant, -Robot.oi.stickR.getY()* multConstant);
     }
 
 
