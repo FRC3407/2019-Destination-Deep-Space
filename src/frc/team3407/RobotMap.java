@@ -29,11 +29,11 @@ public class RobotMap
     // public static int rangefinderModule = 1;
 
     //drive base
-    public final static int leftFront = 3;
-    public final static int leftBack = 2;
-    public final static int rightFront = 4;
-    public final static int rightBack = 5  ;
-    public final static double driveSpeed  = .7;
+    public final static int leftFront = 8;
+    public final static int leftBack = 4;
+    public final static int rightFront = 5;
+    public final static int rightBack = 6;
+    public final static double driveSpeed  = .9;
 
     //joysticks
     public final static int stickL = 0;
