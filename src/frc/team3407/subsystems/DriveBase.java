@@ -14,10 +14,11 @@ public class DriveBase extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
-    private Victor leftFront = new Victor(RobotMap.leftFront);
-    private Victor leftBack = new Victor(RobotMap.leftBack);
+
     private Victor rightFront = new Victor(RobotMap.rightFront);
     private Victor rightBack = new Victor(RobotMap.rightBack);
+    private Victor leftBack = new Victor(RobotMap.leftBack);
+    private Victor leftFront = new Victor(RobotMap.leftFront);
 
     private SpeedControllerGroup leftMotors = new SpeedControllerGroup(leftFront, leftBack);
     private SpeedControllerGroup rightMotors = new SpeedControllerGroup(rightFront, rightBack);

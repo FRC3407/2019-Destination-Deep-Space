@@ -33,12 +33,16 @@ public class RobotMap
     public final static int leftBack = 4;
     public final static int rightFront = 5;
     public final static int rightBack = 6;
-    public final static double driveSpeed  = .9;
+    public static double driveSpeed  = .9;
+
+    //speed toggle
+    public final static int speedToggle = 1;
 
     //joysticks
     public final static int stickL = 0;
     public final static int stickR = 1;
     public final static int stick3 = 2;
+
 
     //hatch grabber
     //public final static int hatchGrabButton = 1;

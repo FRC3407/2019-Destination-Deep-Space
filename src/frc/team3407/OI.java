@@ -9,10 +9,7 @@ package frc.team3407;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.team3407.commands.CargoCommand;
-import frc.team3407.commands.ElevatorCommand;
-import frc.team3407.commands.HatchGrabCommand;
-import frc.team3407.commands.HatchPistonCommand;
+import frc.team3407.commands.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -39,6 +36,9 @@ public class OI
         //elevator
         elevatorUp.whileHeld(new ElevatorCommand(true));
         elevatorDown.whileHeld(new ElevatorCommand(false));
+
+        //speed toggle
+        speedToggle.whenPressed(new SpeedToggle());
 
         //TODO: WIP
         //spooky elevator code (with encoder)
@@ -89,4 +89,6 @@ public class OI
 
     private JoystickButton elevatorUp = new JoystickButton(stick3,RobotMap.elevatorUp);
     private JoystickButton elevatorDown = new JoystickButton(stick3, RobotMap.elevatorDown);
+
+    private JoystickButton speedToggle = new JoystickButton(stickL, RobotMap.speedToggle);
 }

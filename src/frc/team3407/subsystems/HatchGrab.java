@@ -15,7 +15,7 @@ public class HatchGrab extends Subsystem {
     //TODO determine counter threshold
     public final static int threshold = 10;
 
-    Victor talon = new Victor(RobotMap.talon);
+    Victor talon = null; //new Victor(RobotMap.talon);
 
     public void initDefaultCommand(){}
 
