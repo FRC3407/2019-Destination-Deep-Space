@@ -6,10 +6,14 @@ import frc.team3407.subsystems.Pneumatics;
 
 
 public class HatchPistonCommand extends Command {
-    public HatchPistonCommand() {
+
+    private boolean outCommand;
+
+    public HatchPistonCommand(boolean outCommand) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         requires(Robot.pneumatics);
+        this.outCommand = outCommand;
     }
 
 
@@ -28,9 +32,9 @@ public class HatchPistonCommand extends Command {
      */
     @Override
     protected void execute() {
-        if(Pneumatics.isExtended){
+        if(Pneumatics.isExtended && !outCommand){
             Robot.pneumatics.pull();
-        } else {
+        } else if(!Pneumatics.isExtended && outCommand){
             Robot.pneumatics.push();
         }
     }
@@ -68,7 +72,7 @@ public class HatchPistonCommand extends Command {
      */
     @Override
     protected void end() {
-        Pneumatics.isExtended = !Pneumatics.isExtended;
+        Pneumatics.isExtended = outCommand;
     }
 
 

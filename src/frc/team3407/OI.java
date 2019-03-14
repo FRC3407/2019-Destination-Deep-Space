@@ -27,7 +27,8 @@ public class OI
         hatchGrabClose2.whileHeld(new HatchGrabCommand(false));
 
         //triggers hatch piston mechanism
-        hatchPistonButton.whenPressed(new HatchPistonCommand());
+        hatchPistonIn.whenPressed(new HatchPistonCommand(false));
+        hatchPistonOut.whenPressed(new HatchPistonCommand(true));
 
         //cargo arms
         cargoIn.whileHeld(new CargoCommand(false));
@@ -78,7 +79,8 @@ public class OI
     public Joystick stick3 = new Joystick(RobotMap.stick3);
 
     //public JoystickButton hatchGrabButton = new JoystickButton(stickR, RobotMap.hatchGrabButton);
-    public JoystickButton hatchPistonButton = new JoystickButton(stickL, RobotMap.hatchPistonButton);
+    public JoystickButton hatchPistonIn = new JoystickButton(stickL, RobotMap.hatchPistonIn);
+    public JoystickButton hatchPistonOut = new JoystickButton(stickL, RobotMap.hatchPistonOut);
     public JoystickButton hatchGrabOpen1 = new JoystickButton(stickR, RobotMap.hatchGrabOpen1);
     public JoystickButton hatchGrabOpen2 = new JoystickButton(stickR, RobotMap.hatchGrabOpen2);
     public JoystickButton hatchGrabClose1 = new JoystickButton(stickR, RobotMap.hatchGrabClose1);

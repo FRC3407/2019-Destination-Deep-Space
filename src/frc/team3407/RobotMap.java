@@ -59,7 +59,9 @@ public class RobotMap
     public final static int dSolOpen = 1; //TODO: update ports for Phil
     //pnuematics
     public static final int singleSol = 3; //TODO: set correct port
-    public final static int hatchPistonButton = 4; //TODO make this 2 buttons: one in, one out
+    public final static int hatchPistonIn = 5;
+    public final static int hatchPistonOut = 4;
+
     //cargo
     //TODO determine ports (7, 8, 9 are open)
     public static final int armR = 7;
