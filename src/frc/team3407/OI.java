@@ -78,7 +78,7 @@ public class OI
     public Joystick stick3 = new Joystick(RobotMap.stick3);
 
     //public JoystickButton hatchGrabButton = new JoystickButton(stickR, RobotMap.hatchGrabButton);
-    public JoystickButton hatchPistonButton = new JoystickButton(stickR, RobotMap.hatchPistonButton);
+    public JoystickButton hatchPistonButton = new JoystickButton(stickL, RobotMap.hatchPistonButton);
     public JoystickButton hatchGrabOpen1 = new JoystickButton(stickR, RobotMap.hatchGrabOpen1);
     public JoystickButton hatchGrabOpen2 = new JoystickButton(stickR, RobotMap.hatchGrabOpen2);
     public JoystickButton hatchGrabClose1 = new JoystickButton(stickR, RobotMap.hatchGrabClose1);
@@ -90,5 +90,5 @@ public class OI
     private JoystickButton elevatorUp = new JoystickButton(stick3,RobotMap.elevatorUp);
     private JoystickButton elevatorDown = new JoystickButton(stick3, RobotMap.elevatorDown);
 
-    private JoystickButton speedToggle = new JoystickButton(stickL, RobotMap.speedToggle);
+    private JoystickButton speedToggle = new JoystickButton(stickR, RobotMap.speedToggle);
 }

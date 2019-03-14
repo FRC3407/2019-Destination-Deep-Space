@@ -59,7 +59,7 @@ public class RobotMap
     public final static int dSolOpen = 1; //TODO: update ports for Phil
     //pnuematics
     public static final int singleSol = 3; //TODO: set correct port
-    public final static int hatchPistonButton = 1;
+    public final static int hatchPistonButton = 4; //TODO make this 2 buttons: one in, one out
     //cargo
     //TODO determine ports (7, 8, 9 are open)
     public static final int armR = 7;
@@ -67,14 +67,14 @@ public class RobotMap
     //TODO tune speeds, especially hold speed
     public static final double cargoSpeed = 0.5;
     public static final double cargoHoldSpeed = .8;
-    public static final int cargoIn = 3;
-    public static final int cargoOut = 2;
+    public static final int cargoIn = 2;
+    public static final int cargoOut = 3;
 
     //elevator
     public static final double elevatorSpeed = 0.7; //TODO: tune value
     public static final int elevatorMotor = 0; //TODO: setup the correct port
     public static int elevatorDown = 3;
-    public static int elevatorUp = 2;
+    public static int elevatorUp = 5;
     //encoder
     public static final int encoderInput1 = 0;
     public static final int encoderInput2 = 1;
