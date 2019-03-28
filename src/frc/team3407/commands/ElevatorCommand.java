@@ -1,5 +1,6 @@
 package frc.team3407.commands;
 
+import edu.wpi.first.networktables.RpcAnswer;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team3407.Robot;
 
@@ -30,12 +31,18 @@ public class ElevatorCommand extends Command {
      */
     @Override
     protected void execute() {
-        if(movingUp && (!Robot.elevator.getTopSwitch() || !Robot.elevator.getBottomSwitch()) ){
+        if(movingUp &&(!Robot.elevator.getTopSwitch())){
+            System.out.println("UP");
             Robot.elevator.moveUp();
         } else if (movingUp) {
-            Robot.elevator.hold();
-        } else {
+           Robot.elevator.hold();
+           System.out.println("going UP stopped. holding");
+        } else if(!Robot.elevator.getBottomSwitch()){
             Robot.elevator.moveDown();
+            System.out.println("DOWN");
+        } else {
+            Robot.elevator.hold();
+            System.out.println("going DOWN stopped. holding.");
         }
     }
 
@@ -91,6 +98,6 @@ public class ElevatorCommand extends Command {
     @Override
     protected void interrupted() {
         super.interrupted();
-        Robot.elevator.stop();
+        Robot.elevator.hold();
     }
 }

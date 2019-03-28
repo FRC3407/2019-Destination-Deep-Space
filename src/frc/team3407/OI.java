@@ -31,8 +31,8 @@ public class OI
         hatchPistonOut.whenPressed(new HatchPistonCommand(true));
 
         //cargo arms
-        cargoIn.whileHeld(new CargoCommand(false));
-        cargoOut.whileHeld(new CargoCommand(true));
+        //cargoIn.whileHeld(new CargoCommand(false));
+        //cargoOut.whileHeld(new CargoCommand(true));
 
         //elevator
         elevatorUp.whileHeld(new ElevatorCommand(true));
@@ -86,11 +86,11 @@ public class OI
     public JoystickButton hatchGrabClose1 = new JoystickButton(stickR, RobotMap.hatchGrabClose1);
     public JoystickButton hatchGrabClose2 = new JoystickButton(stickR, RobotMap.hatchGrabClose2);
 
-    public JoystickButton cargoIn = new JoystickButton(stickL, RobotMap.cargoIn);
-    public JoystickButton cargoOut = new JoystickButton(stickL, RobotMap.cargoOut);
+    //public JoystickButton cargoIn = new JoystickButton(stickL, RobotMap.cargoIn);
+    //public JoystickButton cargoOut = new JoystickButton(stickL, RobotMap.cargoOut);
 
-    private JoystickButton elevatorUp = new JoystickButton(stick3,RobotMap.elevatorUp);
-    private JoystickButton elevatorDown = new JoystickButton(stick3, RobotMap.elevatorDown);
+    private JoystickButton elevatorUp = new JoystickButton(stickL,RobotMap.elevatorUp);
+    private JoystickButton elevatorDown = new JoystickButton(stickL, RobotMap.elevatorDown);
 
     private JoystickButton speedToggle = new JoystickButton(stickR, RobotMap.speedToggle);
 }

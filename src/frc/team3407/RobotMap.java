@@ -51,7 +51,7 @@ public class RobotMap
     public final static int hatchGrabClose1 = 2;
     public final static int hatchGrabClose2 = 3;
 
-    public final static double hatchGrabSpeed = .35;
+    public final static double hatchGrabSpeed = .5;
     public final static int talon = 6;
 
     //double solenoid for hatch piston
@@ -73,17 +73,17 @@ public class RobotMap
     public static final int cargoOut = 3;
 
     //elevator
-    public static final double elevatorSpeed = 0.7; //TODO: tune value
-    public static final int elevatorMotor = 0; //TODO: setup the correct port
+    public static final double elevatorSpeed = 0.5; //TODO: tune value
+    public static final int elevatorMotor = 9; //TODO: setup the correct port
     public static int elevatorDown = 3;
-    public static int elevatorUp = 5;
+    public static int elevatorUp = 2;
     //encoder
     public static final int encoderInput1 = 0;
     public static final int encoderInput2 = 1;
     public static final boolean encoderReverseDirection = false;
     public static final CounterBase.EncodingType encoderType = Encoder.EncodingType.k4X;
     public static final int topSwitch = 4; //TODO change port
-    public static final double elevatorHoldSpeed = .5; //TODO: find correct value
+    public static final double elevatorHoldSpeed = .3; //TODO: find correct value
     public static final int bottomSwitch = 2; //TODO change port
     public static final int distancePerPulse = 2; //TODO same old
 }
