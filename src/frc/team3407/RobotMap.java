@@ -31,8 +31,8 @@ public class RobotMap
     //pnuematics
     public final static int hatchSolClose = 1;
     public final static int hatchSolOpen = 2;
-    public static final int cargoSolClose = 3;
-    public static final int cargoSolOpen = 4;
+    public static final int armsSolClose = 3;
+    public static final int armsSolOpen = 4;
 
     //cargo
     public static final int cargoMotorR = 7;
@@ -80,14 +80,17 @@ public class RobotMap
     public final static int hatchGrabClose1 = 2;
     public final static int hatchGrabClose2 = 3;
 
-    //pnuematic buttons
+
     public final static int hatchPistonIn = 5;
     public final static int hatchPistonOut = 4;
 
     //cargo buttons
     public static final int cargoIn = 2;
     public static final int cargoOut = 3;
+    public static final int armsPistonToggle = 1;
+
     //Elevator buttons
     public static int elevatorDown = 3;
     public static int elevatorUp = 2;
+
 }
