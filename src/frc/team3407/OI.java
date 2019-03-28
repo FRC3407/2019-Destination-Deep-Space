@@ -34,9 +34,8 @@ public class OI
         armsPistonToggle.whenPressed(new CargoArms());
 
         //cargo arms
-        cargoIn.whileHeld(new CargoCommand(false));
+        cargoIn.whileHeld(new CargoCommand(false)); //TODO: backwards? shouldn't it be the other way (i.e cargoIn.... true)
         cargoOut.whileHeld(new CargoCommand(true));
-
         //elevator
         elevatorUp.whileHeld(new ElevatorCommand(true));
         elevatorDown.whileHeld(new ElevatorCommand(false));
@@ -44,10 +43,9 @@ public class OI
         //speed toggle
         speedToggle.whenPressed(new SpeedToggle());
 
-        //TODO: WIP
         //spooky elevator code (with encoder)
-        //elevatorUp.whenPressed(new ElevatorCommand(true));
-        //elevatorDown.whenPressed(new ElevatorCommand(false));
+        elevatorUp.whenPressed(new ElevatorCommand(true));
+        elevatorDown.whenPressed(new ElevatorCommand(false));
     }
 
     // CREATING BUTTONS
