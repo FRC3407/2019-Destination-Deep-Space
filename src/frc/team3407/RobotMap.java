@@ -66,20 +66,17 @@ public class RobotMap
     public static double driveSpeed  = .9;
     public final static double hatchGrabSpeed = .5;
 
-    //speed toggle TODO explain yourself
-    public final static int speedToggle = 1;
-
     /* JOYSTICKS AND BUTTONS */
     //joysticks
     public final static int stickL = 0;
     public final static int stickR = 1;
     public final static int stick3 = 2;
+
     //hatchGrabber buttons
     public final static int hatchGrabOpen1 = 4;
     public final static int hatchGrabOpen2 = 5;
     public final static int hatchGrabClose1 = 2;
     public final static int hatchGrabClose2 = 3;
-
 
     public final static int hatchPistonIn = 5;
     public final static int hatchPistonOut = 4;
@@ -92,5 +89,8 @@ public class RobotMap
     //Elevator buttons
     public static int elevatorDown = 3;
     public static int elevatorUp = 2;
+
+    //speed toggle
+    public final static int speedToggle = 1;
 
 }

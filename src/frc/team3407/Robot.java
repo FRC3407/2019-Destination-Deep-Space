@@ -53,10 +53,9 @@ public class Robot extends TimedRobot {
         // chooser.addDefault("Default Auto", new ExampleCommand());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
-        VideoSource highCam = CameraServer.getInstance().startAutomaticCapture("High Camera", RobotMap.highCamera); // 0
-        VideoSource lowCam = CameraServer.getInstance().startAutomaticCapture("Low Camera", RobotMap.lowCamera); //1
+        VideoSource highCam = CameraServer.getInstance().startAutomaticCapture("High Camera", RobotMap.highCamera);
+        VideoSource lowCam = CameraServer.getInstance().startAutomaticCapture("Low Camera", RobotMap.lowCamera);
 
-        //CameraServer.getInstance().startAutomaticCapture("test1", 1);
         lowCam.setResolution(250 ,150);
         lowCam.setFPS(10);
         highCam.setResolution(360, 240);
