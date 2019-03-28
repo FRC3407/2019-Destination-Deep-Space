@@ -15,7 +15,8 @@ public class HatchGrab extends Subsystem {
     //TODO determine counter threshold
     public final static int threshold = 10;
 
-    Victor talon = null; //new Victor(RobotMap.talon);
+    Victor talon = new Victor(RobotMap.hatchGrabMotor); //TODO: give a lecture why setting things to NULL as a placeholder is always a bad idea
+    //you need to put a TO_DO at the very least
 
     public void initDefaultCommand(){}
 

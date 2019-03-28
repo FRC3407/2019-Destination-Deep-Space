@@ -43,6 +43,7 @@ public class ElevatorCommand extends Command {
         } else {
             Robot.elevator.hold();
             System.out.println("going DOWN stopped. holding.");
+            Robot.encoder.reset();
         }
     }
 

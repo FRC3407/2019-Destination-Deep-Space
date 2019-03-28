@@ -9,8 +9,8 @@ import frc.team3407.RobotMap;
 
 public class Pneumatics extends Subsystem {
 
-    private DoubleSolenoid doubleSolenoid = new DoubleSolenoid(RobotMap.dSolOpen, RobotMap.dSolClose); //expects open, close
-    private Solenoid solenoid = new Solenoid(RobotMap.singleSol);
+    private DoubleSolenoid hatchSolenoid = new DoubleSolenoid(RobotMap.hatchSolOpen, RobotMap.hatchSolClose); //expects open, close
+    private DoubleSolenoid cargoSolenoid = new DoubleSolenoid(RobotMap.cargoSolOpen, RobotMap.cargoSolClose);
     //private Compressor compressor = new Compressor(RobotMap.compressor);
 
     public static boolean isExtended = false;
@@ -21,18 +21,18 @@ public class Pneumatics extends Subsystem {
     public void initDefaultCommand() {}
 
     public void push(){
-        solenoid.set(true);
-        doubleSolenoid.set(DoubleSolenoid.Value.kForward);
+        cargoSolenoid.set(DoubleSolenoid.Value.kForward);
+        hatchSolenoid.set(DoubleSolenoid.Value.kForward);
     }
 
     public void pull(){
-        solenoid.set(false);
-        doubleSolenoid.set(DoubleSolenoid.Value.kReverse);
+        cargoSolenoid.set(DoubleSolenoid.Value.kReverse);
+        hatchSolenoid.set(DoubleSolenoid.Value.kReverse);
     }
 
     public void off(){
-        solenoid.set(false);
-        doubleSolenoid.set(DoubleSolenoid.Value.kOff);
+        cargoSolenoid.set(DoubleSolenoid.Value.kOff);
+        hatchSolenoid.set(DoubleSolenoid.Value.kOff);
     }
 
 }
