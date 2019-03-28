@@ -51,12 +51,17 @@ public class RobotMap
     public final static int hatchGrabClose1 = 2;
     public final static int hatchGrabClose2 = 3;
 
-    public final static double hatchGrabSpeed = .35;
+    public final static double hatchGrabSpeed = .5;
     public final static int talon = 6;
 
     //double solenoid for hatch piston
-    public final static int dSolClose = 0; //ports accurate for lambda, will need update for Phil
-    public final static int dSolOpen = 1; //TODO: update ports for Phil
+    public final static int dSolCloseHatch = 1; //ports accurate for lambda, will need update for Phil
+    public final static int dSolOpenHatch = 2; //TODO: update ports for Phil
+
+    //double solenoid for arms piston
+    public final static int dSolCloseArms = 3;
+    public final static int dSolOpenArms = 4;
+
     //pnuematics
     public static final int singleSol = 3; //TODO: set correct port
     public final static int hatchPistonIn = 5;
@@ -71,6 +76,8 @@ public class RobotMap
     public static final double cargoHoldSpeed = .8;
     public static final int cargoIn = 2;
     public static final int cargoOut = 3;
+
+    public static final int armsPistonToggle = 1;
 
     //elevator
     public static final double elevatorSpeed = 0.7; //TODO: tune value

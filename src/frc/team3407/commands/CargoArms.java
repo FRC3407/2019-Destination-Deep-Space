@@ -2,18 +2,20 @@ package frc.team3407.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team3407.Robot;
+import frc.team3407.RobotMap;
 import frc.team3407.subsystems.Pneumatics;
 
 
-public class HatchPistonCommand extends Command {
+public class CargoArms extends Command {
 
-    private boolean outCommand;
+    //TODO delete this! refers to the desired state of the PISTON (ie. I want piston in. I want piston out.)
 
-    public HatchPistonCommand(boolean outCommand) {
+    private boolean hasChanged = false;
+
+    public CargoArms() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         requires(Robot.pneumatics);
-        this.outCommand = outCommand;
     }
 
 
@@ -23,6 +25,7 @@ public class HatchPistonCommand extends Command {
      */
     @Override
     protected void initialize() {
+
     }
 
 
@@ -32,13 +35,13 @@ public class HatchPistonCommand extends Command {
      */
     @Override
     protected void execute() {
-        //only runs if the arms are up, out of the way (piston extended)
-        if(Pneumatics.isExtendedArms){
-            if(Pneumatics.isExtendedHatch && !outCommand){
-                Robot.pneumatics.hatchPull();
-            } else if(!Pneumatics.isExtendedHatch && outCommand){
-                Robot.pneumatics.hatchPush();
-            }
+        //TODO if the following code does not execute, try it in initialize(). I forgot why we used initialize() in SpeedToggle command.
+        if(Pneumatics.isExtendedArms && !Pneumatics.isExtendedHatch){
+            Robot.pneumatics.armsPull();
+            hasChanged = true;
+        } else if(!Pneumatics.isExtendedArms){
+            Robot.pneumatics.armsPush();
+            hasChanged = true;
         }
     }
 
@@ -75,7 +78,10 @@ public class HatchPistonCommand extends Command {
      */
     @Override
     protected void end() {
-        Pneumatics.isExtendedHatch = outCommand;
+        //if the piston has been pushed/pulled, reflect that change in the isExtended boolean
+        if(hasChanged){
+            Pneumatics.isExtendedArms = !Pneumatics.isExtendedArms;
+        }
     }
 
 

@@ -2,37 +2,43 @@ package frc.team3407.subsystems;
 
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.team3407.Robot;
 import frc.team3407.RobotMap;
 
 public class Pneumatics extends Subsystem {
 
-    private DoubleSolenoid doubleSolenoid = new DoubleSolenoid(RobotMap.dSolOpen, RobotMap.dSolClose); //expects open, close
-    private Solenoid solenoid = new Solenoid(RobotMap.singleSol);
+    private DoubleSolenoid armsSolenoid = new DoubleSolenoid(RobotMap.dSolOpenArms, RobotMap.dSolCloseArms);
+    private DoubleSolenoid hatchSolenoid = new DoubleSolenoid(RobotMap.dSolOpenHatch, RobotMap.dSolCloseHatch); //expects open, close
     //private Compressor compressor = new Compressor(RobotMap.compressor);
 
-    public static boolean isExtended = false;
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
-
+    //isExtendedHatch can never be true while isExtendedArms is false!
+    public static boolean isExtendedArms = true;
+    public static boolean isExtendedHatch = false;
 
     public void initDefaultCommand() {}
 
-    public void push(){
-        solenoid.set(true);
-        doubleSolenoid.set(DoubleSolenoid.Value.kForward);
+    public void armsPush(){
+        armsSolenoid.set(DoubleSolenoid.Value.kForward);
     }
 
-    public void pull(){
-        solenoid.set(false);
-        doubleSolenoid.set(DoubleSolenoid.Value.kReverse);
+    public void armsPull(){
+        armsSolenoid.set(DoubleSolenoid.Value.kReverse);
     }
 
-    public void off(){
-        solenoid.set(false);
-        doubleSolenoid.set(DoubleSolenoid.Value.kOff);
+    public void armsOff(){
+        armsSolenoid.set(DoubleSolenoid.Value.kOff);
+    }
+
+    public void hatchPush(){
+        hatchSolenoid.set(DoubleSolenoid.Value.kForward);
+    }
+
+    public void hatchPull(){
+        hatchSolenoid.set(DoubleSolenoid.Value.kReverse);
+    }
+
+    public void hatchOff(){
+        hatchSolenoid.set(DoubleSolenoid.Value.kOff);
     }
 
 }
