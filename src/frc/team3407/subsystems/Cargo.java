@@ -17,8 +17,8 @@ public class Cargo extends Subsystem {
     private Victor armR = new Victor(RobotMap.cargoMotorR);
 
     public void intake(){
-        armL.set(-speed);
-        armR.set(speed);
+        armL.set(-speed*.8); //slow
+        armR.set(speed*.8);
     }
     public void hold(){
         armL.set(-holdSpeed);

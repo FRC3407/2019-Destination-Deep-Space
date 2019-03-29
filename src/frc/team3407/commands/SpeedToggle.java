@@ -1,13 +1,14 @@
 package frc.team3407.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.team3407.Robot;
 import frc.team3407.RobotMap;
 
 
 public class SpeedToggle extends Command {
 
-    private static final double low = .4;
-    private static final double high = .9;
+    private static final double low = RobotMap.driveSpeedLow;
+    private static final double high = RobotMap.driveSpeedHigh;
 
     public SpeedToggle() {
         // Use requires() here to declare subsystem dependencies
@@ -21,10 +22,10 @@ public class SpeedToggle extends Command {
      */
     @Override
     protected void initialize() {
-        if(RobotMap.driveSpeed == high) {
-            RobotMap.driveSpeed = low;
+        if(RobotMap.activeDriveSpeed == high) {
+            RobotMap.activeDriveSpeed = low;
         } else {
-            RobotMap.driveSpeed = high;
+            RobotMap.activeDriveSpeed = high;
         }
     }
 

@@ -21,7 +21,7 @@ public class RobotMap
     /* MOTORS & PORTS */
     //PWM
     //elevator
-    public static final int elevatorMotor = 5;
+    public static final int elevatorMotor = 0;
     //cargo
     public static final int cargoMotorR = 3;
     public static final int cargoMotorL = 2;
@@ -38,8 +38,8 @@ public class RobotMap
     public final static int hatchSolClose = 0;
     public final static int hatchSolOpen = 1; //TODO: see if it's the other way around (close/open)
     //piston for moving arms up/down
-    public static final int armsSolClose = 3; //is this right?
-    public static final int armsSolOpen = 4;//ditto
+    public static final int armsSolClose = 2;
+    public static final int armsSolOpen = 3;
 
     //encoder TODO: find out type of port
     public static final int encoderInput1 = 0;
@@ -55,14 +55,16 @@ public class RobotMap
     public static final int lowCamera = 1;
 
     /* CONSTANTS AND NON-PORTS */
-
     //speeds TODO tune speeds, especially hold speed
-    public static final double elevatorSpeed = 0.65; //TODO: tune value
-    public static final double elevatorHoldSpeed = .35; //TODO: find correct value
+    public static final double elevatorSpeed = 0.5; //TODO: tune value
+    public static final double elevatorHoldSpeed = .20; //TODO: find correct value
     public static final double cargoSpeed = 0.5;
     public static final double cargoHoldSpeed = .4; //% of cargo speed. not 40% of total motor speed. idk either.
-    public static double driveSpeed  = .9;
-    public final static double hatchGrabSpeed = .5;
+    public final static double driveSpeedHigh  = .9;
+    public final static double hatchGrabSpeed = .65; //increased for testing. TODO Lower (.5?)
+    public static final double driveSpeedLow = .4;
+    public static double activeDriveSpeed = .9;
+
 
     //encoder
     public static final boolean encoderReverseDirection = false; //final?
@@ -75,7 +77,7 @@ public class RobotMap
     public final static int stickR = 1;
     public final static int stick3 = 2;
 
-    //STICKL BUTTONS
+    //TODO STICKL BUTTONS
     //(cargo/arms) piston button.
     public static final int armsPistonToggle = 1;
     //cargo motor buttons
@@ -86,7 +88,7 @@ public class RobotMap
 
     public final static int hatchPistonIn = 5;
 
-    //STICKR BUTTONS
+    //TODO STICKR BUTTONS
     public final static int speedToggle = 1;
     //hatchGrabber motor  buttons
     public final static int hatchGrabOpen2 = 2;
@@ -94,7 +96,7 @@ public class RobotMap
     public final static int hatchGrabClose1 = 4;
     public final static int hatchGrabClose2 = 5;
 
-    //STICK3 BUTTONS
+    //TODO STICK3 BUTTONS
     public static int elevatorDown = 3;
     public static int elevatorUp = 5;
 

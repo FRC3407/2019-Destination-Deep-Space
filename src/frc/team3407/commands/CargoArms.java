@@ -25,6 +25,7 @@ public class CargoArms extends Command {
      */
     @Override
     protected void initialize() {
+        System.out.println("arm piston command reached");
 
     }
 
@@ -38,9 +39,11 @@ public class CargoArms extends Command {
         //TODO if the following code does not execute, try it in initialize(). I forgot why we used initialize() in SpeedToggle command.
         if(Pneumatics.isExtendedArms && !Pneumatics.isExtendedHatch){
             Robot.pneumatics.armsPull();
+            System.out.println("exec armsPull");
             hasChanged = true;
         } else if(!Pneumatics.isExtendedArms){
             Robot.pneumatics.armsPush();
+            System.out.println("exec armsPush");
             hasChanged = true;
         }
     }

@@ -35,7 +35,7 @@ public class ElevatorCommand extends Command {
             System.out.println("UP");
             Robot.elevator.moveUp();
         } else if (movingUp) {
-           Robot.elevator.hold();
+           Robot.elevator.hold();//tohold
            System.out.println("going UP stopped. holding");
         //} else if(!Robot.elevator.getBottomSwitch()){
           //  Robot.elevator.moveDown();
@@ -44,7 +44,8 @@ public class ElevatorCommand extends Command {
            /* Robot.elevator.hold();
             System.out.println("going DOWN stopped. holding.");
             Robot.encoder.reset();*/
-           Robot.elevator.moveDown();
+           Robot.elevator.stop();
+           System.out.println("DOWN");
         }
     }
 
@@ -80,7 +81,7 @@ public class ElevatorCommand extends Command {
      */
     @Override
     protected void end() {
-        Robot.elevator.hold();
+        Robot.elevator.hold();//tohold
     }
 
     /**
