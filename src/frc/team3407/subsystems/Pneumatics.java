@@ -21,10 +21,12 @@ public class Pneumatics extends Subsystem {
 
     public void armsPush(){
         armsSolenoid.set(DoubleSolenoid.Value.kForward);
+        System.out.println("PUSHING ARMS");
     }
 
     public void armsPull(){
         armsSolenoid.set(DoubleSolenoid.Value.kReverse);
+        System.out.println("PULLING ARMS");
     }
 
     public void armsOff(){
@@ -33,10 +35,12 @@ public class Pneumatics extends Subsystem {
 
     public void hatchPush(){
         hatchSolenoid.set(DoubleSolenoid.Value.kForward);
+        System.out.println("PUSHING HATCH");
     }
 
     public void hatchPull(){
         hatchSolenoid.set(DoubleSolenoid.Value.kReverse);
+        System.out.println("PULLING HATCH");
     }
 
     public void hatchOff(){

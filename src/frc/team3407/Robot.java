@@ -56,9 +56,9 @@ public class Robot extends TimedRobot {
         VideoSource highCam = CameraServer.getInstance().startAutomaticCapture("High Camera", RobotMap.highCamera);
         VideoSource lowCam = CameraServer.getInstance().startAutomaticCapture("Low Camera", RobotMap.lowCamera);
 
-        lowCam.setResolution(250 ,150);
+        lowCam.setResolution(175 ,100);
         lowCam.setFPS(10);
-        highCam.setResolution(360, 240);
+        highCam.setResolution(240, 144);
         highCam.setFPS(20);
     }
     /**
@@ -157,12 +157,13 @@ public class Robot extends TimedRobot {
     public void teleopPeriodic() 
     {
         Scheduler.getInstance().run();
-        System.out.println(RobotMap.driveSpeed);
+        //System.out.println(RobotMap.driveSpeed);
     }
 
     @Override
     public void testInit() {
         System.out.println("Test init..");
+        pneumatics.hatchPush();
 
     }
 
