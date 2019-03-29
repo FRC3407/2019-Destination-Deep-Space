@@ -21,9 +21,9 @@ public class RobotMap
     /* MOTORS & PORTS */
     //PWM
     //elevator
-    public static final int elevatorMotor = 0;
+    public static final int elevatorMotor = 5;
     //cargo
-    public static final int cargoMotorR = 1;
+    public static final int cargoMotorR = 3;
     public static final int cargoMotorL = 2;
     //hatchgrab
     public final static int hatchGrabMotor = 4;
@@ -46,6 +46,7 @@ public class RobotMap
     public static final int encoderInput2 = 1;
 
     //limit switches (CAN? Analog?)
+    //connected top switch -jonathan
     public static final int topSwitch = 4; //TODO change port
     public static final int bottomSwitch = 2; //TODO change port
 
@@ -56,10 +57,10 @@ public class RobotMap
     /* CONSTANTS AND NON-PORTS */
 
     //speeds TODO tune speeds, especially hold speed
-    public static final double elevatorSpeed = 0.5; //TODO: tune value
-    public static final double elevatorHoldSpeed = .3; //TODO: find correct value
+    public static final double elevatorSpeed = 0.65; //TODO: tune value
+    public static final double elevatorHoldSpeed = .35; //TODO: find correct value
     public static final double cargoSpeed = 0.5;
-    public static final double cargoHoldSpeed = .4;
+    public static final double cargoHoldSpeed = .4; //% of cargo speed. not 40% of total motor speed. idk either.
     public static double driveSpeed  = .9;
     public final static double hatchGrabSpeed = .5;
 
@@ -82,6 +83,7 @@ public class RobotMap
     public static final int cargoOut = 3;
     //hatch piston buttons
     public final static int hatchPistonOut = 4;
+
     public final static int hatchPistonIn = 5;
 
     //STICKR BUTTONS
