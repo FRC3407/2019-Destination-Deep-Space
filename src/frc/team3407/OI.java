@@ -22,9 +22,9 @@ public class OI
         //triggers hatch grab mechanism
         //hatchGrabButton.whenPressed(new HatchGrabCommand());
         hatchGrabOpen1.whileHeld(new HatchGrabCommand(true));
-        hatchGrabOpen2.whileHeld(new HatchGrabCommand(true));
+        //hatchGrabOpen2.whileHeld(new HatchGrabCommand(true));
         hatchGrabClose1.whileHeld(new HatchGrabCommand(false));
-        hatchGrabClose2.whileHeld(new HatchGrabCommand(false));
+       // hatchGrabClose2.whileHeld(new HatchGrabCommand(false));
 
         //triggers hatch piston mechanism
         hatchPistonIn.whenPressed(new HatchPistonCommand(false));
@@ -77,23 +77,23 @@ public class OI
     // button.whenReleased(new ExampleCommand());
     public Joystick stickL = new Joystick(RobotMap.stickL);
     public Joystick stickR = new Joystick(RobotMap.stickR);
-    public Joystick stick3 = new Joystick(RobotMap.stick3);
+    //public Joystick stick3 = new Joystick(RobotMap.stick3);
 
     //public JoystickButton hatchGrabButton = new JoystickButton(stickR, RobotMap.hatchGrabButton);
     public JoystickButton hatchPistonIn = new JoystickButton(stickL, RobotMap.hatchPistonIn);
     public JoystickButton hatchPistonOut = new JoystickButton(stickL, RobotMap.hatchPistonOut);
     public JoystickButton hatchGrabOpen1 = new JoystickButton(stickR, RobotMap.hatchGrabOpen1);
-    public JoystickButton hatchGrabOpen2 = new JoystickButton(stickR, RobotMap.hatchGrabOpen2);
+   // public JoystickButton hatchGrabOpen2 = new JoystickButton(stickR, RobotMap.hatchGrabOpen2);
     public JoystickButton hatchGrabClose1 = new JoystickButton(stickR, RobotMap.hatchGrabClose1);
-    public JoystickButton hatchGrabClose2 = new JoystickButton(stickR, RobotMap.hatchGrabClose2);
+    //public JoystickButton hatchGrabClose2 = new JoystickButton(stickR, RobotMap.hatchGrabClose2);
 
     public JoystickButton armsPistonToggle = new JoystickButton(stickL,RobotMap.armsPistonToggle);
 
     public JoystickButton cargoIn = new JoystickButton(stickL, RobotMap.cargoIn);
     public JoystickButton cargoOut = new JoystickButton(stickL, RobotMap.cargoOut);
     //TODO: give a lecture on why you can't uncomment essential things in master
-    private JoystickButton elevatorUp = new JoystickButton(stick3,RobotMap.elevatorUp);
-    private JoystickButton elevatorDown = new JoystickButton(stick3, RobotMap.elevatorDown);
+    private JoystickButton elevatorUp = new JoystickButton(stickR,RobotMap.elevatorUp);
+    private JoystickButton elevatorDown = new JoystickButton(stickR, RobotMap.elevatorDown);
 
     private JoystickButton speedToggle = new JoystickButton(stickR, RobotMap.speedToggle);
 }

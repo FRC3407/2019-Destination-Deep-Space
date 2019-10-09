@@ -75,7 +75,7 @@ public class RobotMap
     //joysticks
     public final static int stickL = 0;
     public final static int stickR = 1;
-    public final static int stick3 = 2;
+  //  public final static int stick3 = 2;
 
     //TODO STICKL BUTTONS
     //(cargo/arms) piston button.
@@ -91,13 +91,13 @@ public class RobotMap
     //TODO STICKR BUTTONS
     public final static int speedToggle = 1;
     //hatchGrabber motor  buttons
-    public final static int hatchGrabOpen2 = 2;
-    public final static int hatchGrabOpen1 = 3; //open and closed are inverted as of thursday of 10,000 lakes. (2 and 3 actually close)
-    public final static int hatchGrabClose1 = 4;
-    public final static int hatchGrabClose2 = 5;
 
-    //TODO STICK3 BUTTONS
-    public static int elevatorDown = 3;
-    public static int elevatorUp = 5;
+    public final static int hatchGrabOpen1 = 5; //open and closed are inverted as of thursday of 10,000 lakes. (2 and 3 actually close)
+    public final static int hatchGrabClose1 = 4;
+    
+
+    //TODO STICK2 BUTTONS
+    public static int elevatorDown = 2;
+    public static int elevatorUp = 3;
 
 }
