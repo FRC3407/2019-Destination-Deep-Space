@@ -2,7 +2,8 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
+import edu.wpi.first.wpilibj.motorcontrol.Victor;
 
 import frc.robot.Constants;
 
@@ -13,7 +14,7 @@ public class HatchGrabber extends SubsystemBase {
 
     private Victor hatch = new Victor(Constants.hatchGrabMotor); 
     private DoubleSolenoid 
-        hatchSolenoid = new DoubleSolenoid(Constants.hatchSolOpen, Constants.hatchSolClose);
+        hatchSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.hatchSolOpen, Constants.hatchSolClose);
 
     public void open() {
         hatch.set(Constants.hatchGrabSpeed);

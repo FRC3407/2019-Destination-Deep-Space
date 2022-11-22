@@ -1,7 +1,8 @@
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Victor;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.motorcontrol.Victor;
+import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
+import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -11,9 +12,9 @@ public class DriveBase extends SubsystemBase {
 
     private double d_speed = Constants.driveSpeedLow;
 
-    private SpeedControllerGroup 
-        leftMotors = new SpeedControllerGroup(new Victor(Constants.leftFront), new Victor(Constants.leftBack)), 
-        rightMotors = new SpeedControllerGroup(new Victor(Constants.rightFront), new Victor(Constants.rightBack));
+    private MotorController 
+        leftMotors = new MotorControllerGroup(new Victor(Constants.leftFront), new Victor(Constants.leftBack)), 
+        rightMotors = new MotorControllerGroup(new Victor(Constants.rightFront), new Victor(Constants.rightBack));
     private DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
     public DriveBase() {

@@ -4,11 +4,13 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.Command;
 
-import edu.wpi.cscore.VideoSource;
+import edu.wpi.first.cscore.VideoSource;
 import edu.wpi.first.cameraserver.CameraServer;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+import edu.wpi.first.wpilibj.ADIS16470_IMU;
 
 import frc.robot.subsystems.*;
 
@@ -18,7 +20,7 @@ public class Robot extends TimedRobot {
     public static HatchGrabber hatchGrab = new HatchGrabber();
     public static Cargo cargo = new Cargo();
 
-    public static Input input = new Input(1);
+    public static Input input = new Input(0);
 
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
@@ -34,11 +36,11 @@ public class Robot extends TimedRobot {
         //add ~chooser~ autonomous commands here
         SmartDashboard.putData("Auto mode", chooser);
 
-        VideoSource highCam = CameraServer.getInstance().startAutomaticCapture("High Camera", Constants.highCamera);
+        VideoSource highCam = CameraServer.startAutomaticCapture("High Camera", Constants.highCamera);
         highCam.setResolution(240, 144);
         highCam.setFPS(20);
 
-        //VideoSource lowCam = CameraServer.getInstance().startAutomaticCapture("Low Camera", RobotMap.lowCamera);
+        //VideoSource lowCam = CameraServer.startAutomaticCapture("Low Camera", RobotMap.lowCamera);
         //lowCam.setResolution(175 ,100); //Disabled because of bandwith/lack of cams.
         //lowCam.setFPS(10);
     }

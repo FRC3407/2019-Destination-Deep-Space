@@ -1,7 +1,8 @@
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.motorcontrol.Victor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import frc.robot.Constants;
@@ -10,7 +11,7 @@ public class Cargo extends SubsystemBase {
 
     private boolean arms_extended = false; 
 
-    private DoubleSolenoid arms_ud = new DoubleSolenoid(Constants.armsSolOpen, Constants.armsSolClose);
+    private DoubleSolenoid arms_ud = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.armsSolOpen, Constants.armsSolClose);
     private Victor 
         armL = new Victor(Constants.cargoMotorL),   //convert to speedcontrollergroup with one side inverted
         armR = new Victor(Constants.cargoMotorR);
